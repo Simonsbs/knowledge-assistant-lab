@@ -4,7 +4,9 @@ An independent knowledge assistant and evaluation project by [Simon Stirling](ht
 
 Every company, policy, support target and recovery code in the Alder Cloud sample pack is synthetic.
 
-![Knowledge Lab with a live local model answer](docs/validation/knowledge-lab-live.jpg)
+[Open the public demo](https://knowledge.bestdev.co.il/) with no sign-in. The public deployment runs browser evidence mode; the optional model service runs locally. [Deployment details](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/DEPLOYMENT.md) record the independent hosting and custom domain.
+
+![Knowledge Lab with a live local model answer](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/knowledge-lab-live.jpg)
 
 ## Run
 
@@ -84,7 +86,7 @@ The model returns one concise answer with admitted passage IDs under a JSON sche
 
 Browser roles simulate filtering over a public synthetic pack; they do not protect private data. The local Python service independently applies its server-owned role, reloads canonical source text and rejects unavailable or conflicting submitted passages. It is a single-operator development service, not a multi-user identity system. The public static application does not expose the local Ollama service.
 
-See [ADR 001](decisions/001-static-evidence-and-local-inference.md), the [runbook](RUNBOOK.md), [standalone validation](docs/validation/standalone.md) and the [project roadmap](roadmap.md).
+See [ADR 001](decisions/001-static-evidence-and-local-inference.md), the [runbook](RUNBOOK.md), [standalone validation](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/standalone.md) and the [project roadmap](roadmap.md).
 
 ## Project layout
 

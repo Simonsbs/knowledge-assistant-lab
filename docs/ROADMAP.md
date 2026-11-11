@@ -12,4 +12,4 @@ Known work:
 - Compare lexical retrieval with embeddings only after the larger dataset provides a useful test.
 - Keep public static hosting separate from the optional local model service.
 
-This project is developed and deployed independently from the portfolio. `knowledge.bestdev.co.il` is the intended custom hostname, subject to deployment and DNS verification.
+This project is developed and deployed independently from the portfolio. [knowledge.bestdev.co.il](https://knowledge.bestdev.co.il/) is public without sign-in, with its custom domain and HTTPS verified on 11 November 2026. The portfolio links to this application and its source.

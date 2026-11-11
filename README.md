@@ -4,6 +4,8 @@ An independent knowledge assistant and evaluation project by [Simon Stirling](ht
 
 Every company, policy, support target and recovery code in the Alder Cloud sample pack is synthetic.
 
+[Open the public demo](https://knowledge.bestdev.co.il/) with no sign-in. The public deployment runs browser evidence mode; the optional model service runs locally. [Deployment details](docs/DEPLOYMENT.md) record the independent hosting and custom domain.
+
 ![Knowledge Lab with a live local model answer](docs/validation/knowledge-lab-live.jpg)
 
 ## Run

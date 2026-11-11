@@ -70,6 +70,9 @@ for (const [input, name] of [["README.md", "build-notes.md"], ["docs/RUNBOOK.md"
     .replace("](knowledge-lab-live-evaluation.json)", "](live-evaluation.json)")
     .replace("](docs/RUNBOOK.md)", "](RUNBOOK.md)")
     .replace("](docs/ROADMAP.md)", "](roadmap.md)")
+    .replace("](docs/DEPLOYMENT.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/DEPLOYMENT.md)")
+    .replace("](docs/validation/standalone.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/standalone.md)")
+    .replace("](docs/validation/knowledge-lab-live.jpg)", "](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/knowledge-lab-live.jpg)")
     .replace("](docs/decisions/", "](decisions/");
   await emit(name, contents);
 }
