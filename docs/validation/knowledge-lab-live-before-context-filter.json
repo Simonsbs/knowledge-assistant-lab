@@ -1,0 +1,1660 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-11T09:48:01.651645+00:00",
+  "finishedAt": "2026-11-11T09:48:40.804764+00:00",
+  "runtime": "Python 3.14.3 on Windows/AMD64",
+  "ollamaVersion": "0.40.16",
+  "model": "llama3.2:3b",
+  "modelDigest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "modelDetails": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072,
+    "runner": "ggml"
+  },
+  "adapterSha256": "44a93c31d3c81b838b04fea50b7876ce1e1a4cca54663bf3001859d7838b02f7",
+  "corpusId": "alder-cloud-v1",
+  "corpusSha256": "a291225685becc13d711f482248048188369c42b7232eed9863544ab4c58914d",
+  "questionsSha256": "5fc549ffb542ebbe620f197e21ffb24f1971ba89084288715c9af99b6e8d68ee",
+  "engineSha256": "5119fce73c7a4d5b0a646db867b170fce2b88699f59090da9d8c0f0ba480c204",
+  "configuration": {
+    "profile": "governed",
+    "topK": 3,
+    "temperature": 0,
+    "numPredict": 700,
+    "transport": "isolated loopback HTTP adapters with server-owned support/admin roles"
+  },
+  "answerChecksSha256": "8c75b43d3ac3a1f04f823a9a6ee084ef38a1920b32132050ad1b55bdf9c10f9c",
+  "review": "Pattern checks and citation membership are automated. Semantic human review is pending.",
+  "usageScope": "Token totals and generation timings cover accepted drafts. HTTP generation requests can also be rejected before inference.",
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What is the initial P1 incident response target?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/priority-one"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.9088000000000136,
+      "passageIds": [
+        "support-handbook/priority-one",
+        "support-handbook/priority-two",
+        "support-handbook/incident-escalation"
+      ],
+      "timestamp": "2026-11-11T09:48:01.704192+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The initial P1 incident response target is 15 minutes, available 24 hours a day, seven days a week. [support-handbook/priority-one]",
+        "citations": [
+          "support-handbook/priority-one"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 381,
+        "outputTokens": 45,
+        "generationMs": 559.1353999989224,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b15\\b",
+          "passed": true
+        },
+        {
+          "pattern": "minute",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 2772.576899998967,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q02",
+      "question": "What is the initial P2 incident response target?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/priority-two"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.8067999999999955,
+      "passageIds": [
+        "support-handbook/priority-two",
+        "support-handbook/priority-one",
+        "support-handbook/incident-escalation"
+      ],
+      "timestamp": "2026-11-11T09:48:04.477945+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The initial P2 incident response target is four business hours. [support-handbook/priority-two]",
+        "citations": [
+          "support-handbook/priority-two"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 381,
+        "outputTokens": 33,
+        "generationMs": 302.67819999789936,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b(four|4)\\b",
+          "passed": true
+        },
+        {
+          "pattern": "business hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1054.5771999968565,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q03",
+      "question": "What are the support business hours?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/priority-two"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.18720000000000425,
+      "passageIds": [
+        "support-handbook/priority-two",
+        "support-handbook/priority-one",
+        "identity-guide/api-key-rotation"
+      ],
+      "timestamp": "2026-11-11T09:48:05.533668+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Business hours are Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays. [support-handbook/priority-two]",
+        "citations": [
+          "support-handbook/priority-two"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 387,
+        "outputTokens": 47,
+        "generationMs": 422.68740000145044,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Monday",
+          "passed": true
+        },
+        {
+          "pattern": "Friday",
+          "passed": true
+        },
+        {
+          "pattern": "09:00",
+          "passed": true
+        },
+        {
+          "pattern": "17:00",
+          "passed": true
+        },
+        {
+          "pattern": "UTC",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1163.629899998341,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q04",
+      "question": "When must the support lead open an incident bridge?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/incident-escalation"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.2353999999999985,
+      "passageIds": [
+        "support-handbook/incident-escalation",
+        "support-handbook/priority-one",
+        "export-guide/audit-history"
+      ],
+      "timestamp": "2026-11-11T09:48:06.698913+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The support lead must open an incident bridge and page the duty incident commander if a priority one incident has no assigned owner after 30 minutes. [support-handbook/incident-escalation]\n\nFor a priority one (P1) incident, the initial response target is 15 minutes, available 24 hours a day, seven days a week. [support-handbook/priority-one]\n\nThere is insufficient evidence to determine when the support lead must open an incident bridge. [export-guide/audit-history]",
+        "citations": [
+          "support-handbook/incident-escalation",
+          "support-handbook/priority-one",
+          "export-guide/audit-history"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 375,
+        "outputTokens": 135,
+        "generationMs": 1107.5701999980083,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b30\\b",
+          "passed": true
+        },
+        {
+          "pattern": "no (assigned )?owner|without (an? )?(assigned )?owner|unassigned",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1821.0012000017741,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q05",
+      "question": "How often does the incident commander send a customer status update?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/customer-updates"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 9.618200000000002,
+      "passageIds": [
+        "support-handbook/customer-updates",
+        "support-handbook/incident-escalation",
+        "export-guide/audit-history"
+      ],
+      "timestamp": "2026-11-11T09:48:08.521185+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The incident commander sends a customer status update every 30 minutes. [support-handbook/customer-updates]\n\nIf a priority one incident has no assigned owner after 30 minutes, the support lead must open an incident bridge and page the duty incident commander. [support-handbook/incident-escalation]\n\nSupport staff cannot export a customer's audit history on the customer's behalf. [export-guide/audit-history]",
+        "citations": [
+          "support-handbook/customer-updates",
+          "support-handbook/incident-escalation",
+          "export-guide/audit-history"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 352,
+        "outputTokens": 117,
+        "generationMs": 943.2450999993307,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b30\\b",
+          "passed": true
+        },
+        {
+          "pattern": "minute",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1583.9967000028992,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q06",
+      "question": "Which plan supports SAML single sign-on?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/single-sign-on"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.8645999999999958,
+      "passageIds": [
+        "identity-guide/single-sign-on",
+        "identity-guide/user-provisioning"
+      ],
+      "timestamp": "2026-11-11T09:48:10.106205+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Only the Enterprise plan supports SAML 2.0 single sign-on (SSO). [identity-guide/single-sign-on]\n\nThe Starter plan does not include SAML single sign-on. [identity-guide/single-sign-on]",
+        "citations": [
+          "identity-guide/single-sign-on"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 297,
+        "outputTokens": 67,
+        "generationMs": 617.1401999999944,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Enterprise",
+          "passed": true
+        },
+        {
+          "pattern": "SAML",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1405.3163999997196,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q07",
+      "question": "Who requires multi-factor authentication?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/multi-factor-authentication"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.7885000000000133,
+      "passageIds": [
+        "identity-guide/multi-factor-authentication"
+      ],
+      "timestamp": "2026-11-11T09:48:11.512740+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "All administrators and support staff require multi-factor authentication. [identity-guide/multi-factor-authentication]",
+        "citations": [
+          "identity-guide/multi-factor-authentication"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 241,
+        "outputTokens": 32,
+        "generationMs": 296.77689999880386,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "admin",
+          "passed": true
+        },
+        {
+          "pattern": "support",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1142.2779000022274,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q08",
+      "question": "Which plan supports SCIM user provisioning?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/user-provisioning"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.49510000000000787,
+      "passageIds": [
+        "identity-guide/user-provisioning",
+        "identity-guide/single-sign-on",
+        "export-guide/export-format"
+      ],
+      "timestamp": "2026-11-11T09:48:12.656497+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The Enterprise plan supports SCIM user provisioning. [identity-guide/user-provisioning]\n\nThere is insufficient evidence to determine which plan supports SCIM user provisioning. [identity-guide/user-provisioning] [export-guide/export-format]\n\nThere is insufficient evidence to determine which plan supports SAML 2.0 single sign-on. [identity-guide/single-sign-on]",
+        "citations": [
+          "identity-guide/user-provisioning",
+          "export-guide/export-format",
+          "identity-guide/single-sign-on"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 339,
+        "outputTokens": 106,
+        "generationMs": 887.6668000011705,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Enterprise",
+          "passed": true
+        },
+        {
+          "pattern": "SCIM",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1661.971599998651,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q09",
+      "question": "How often must API keys be rotated?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/api-key-rotation"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.5578000000000003,
+      "passageIds": [
+        "identity-guide/api-key-rotation",
+        "webhook-guide/duplicate-events",
+        "privacy-policy/workspace-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:14.319622+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "API keys must be rotated every 90 days. [identity-guide/api-key-rotation]\n\nKeep the previous API key active for no more than 24 hours during a planned rotation. [identity-guide/api-key-rotation]\n\nNever include actual keys in support tickets. [identity-guide/api-key-rotation]\n\nStore processed idempotency keys for 24 hours. [webhook-guide/duplicate-events]\n\nReturn the previous delivery result for a duplicate event. [webhook-guide/duplicate-events]\n\nDo not apply a duplicate event a second time. [webhook-guide/duplicate-events]",
+        "citations": [
+          "identity-guide/api-key-rotation",
+          "webhook-guide/duplicate-events"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 356,
+        "outputTokens": 182,
+        "generationMs": 1523.7179000032484,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b90\\b",
+          "passed": true
+        },
+        {
+          "pattern": "days?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 2194.701399999758,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q10",
+      "question": "How long can the previous API key stay active during rotation?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/api-key-rotation"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.5546000000000078,
+      "passageIds": [
+        "identity-guide/api-key-rotation",
+        "webhook-guide/duplicate-events",
+        "support-handbook/customer-updates"
+      ],
+      "timestamp": "2026-11-11T09:48:16.515742+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The previous API key can stay active for up to 24 hours during a planned rotation. [identity-guide/api-key-rotation]\n\nThe previous API key can stay active for up to 24 hours. [identity-guide/api-key-rotation] [webhook-guide/duplicate-events]",
+        "citations": [
+          "identity-guide/api-key-rotation",
+          "webhook-guide/duplicate-events"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 367,
+        "outputTokens": 81,
+        "generationMs": 732.4928999987605,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b24\\b",
+          "passed": true
+        },
+        {
+          "pattern": "hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1396.3191999973787,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q11",
+      "question": "What is the webhook delivery retry schedule?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/delivery-retries"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.45520000000000493,
+      "passageIds": [
+        "webhook-guide/delivery-retries",
+        "webhook-guide/duplicate-events",
+        "webhook-guide/signature-verification"
+      ],
+      "timestamp": "2026-11-11T09:48:17.913548+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. [webhook-guide/delivery-retries]\n\nA workspace administrator can inspect and replay a dead-letter event. [webhook-guide/delivery-retries]\n\nThe event moves to the dead-letter queue after the final failed retry. [webhook-guide/delivery-retries]",
+        "citations": [
+          "webhook-guide/delivery-retries"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 386,
+        "outputTokens": 110,
+        "generationMs": 882.5687000025937,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b1\\b",
+          "passed": true
+        },
+        {
+          "pattern": "\\b5\\b",
+          "passed": true
+        },
+        {
+          "pattern": "\\b30\\b",
+          "passed": true
+        },
+        {
+          "pattern": "minute",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1826.0212000022875,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q12",
+      "question": "Which algorithm verifies webhook signatures?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/signature-verification"
+      ],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.40690000000000737,
+      "passageIds": [
+        "webhook-guide/signature-verification",
+        "webhook-guide/duplicate-events",
+        "webhook-guide/delivery-retries"
+      ],
+      "timestamp": "2026-11-11T09:48:19.740793+00:00",
+      "decisionMatchesLabel": false,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": false
+    },
+    {
+      "id": "Q13",
+      "question": "When should an old webhook timestamp be rejected?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/signature-verification"
+      ],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.379099999999994,
+      "passageIds": [
+        "webhook-guide/signature-verification",
+        "webhook-guide/duplicate-events",
+        "webhook-guide/delivery-retries"
+      ],
+      "timestamp": "2026-11-11T09:48:19.741593+00:00",
+      "decisionMatchesLabel": false,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": false
+    },
+    {
+      "id": "Q14",
+      "question": "How are duplicate webhook events identified?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/duplicate-events"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.400100000000009,
+      "passageIds": [
+        "webhook-guide/duplicate-events",
+        "webhook-guide/signature-verification",
+        "webhook-guide/delivery-retries"
+      ],
+      "timestamp": "2026-11-11T09:48:19.742504+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Duplicate webhook events are identified by the Idempotency-Key header, and previous delivery results are returned for duplicates. [webhook-guide/duplicate-events]",
+        "citations": [
+          "webhook-guide/duplicate-events"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 384,
+        "outputTokens": 44,
+        "generationMs": 368.4114999996382,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Idempotency.Key",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1188.54569999894,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q15",
+      "question": "How long are processed idempotency keys stored?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/duplicate-events"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.27760000000000673,
+      "passageIds": [
+        "webhook-guide/duplicate-events",
+        "backup-policy/data-location",
+        "identity-guide/api-key-rotation"
+      ],
+      "timestamp": "2026-11-11T09:48:20.932198+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Processed idempotency keys are stored for 24 hours. [webhook-guide/duplicate-events]\n\nAPI keys must be rotated every 90 days. [identity-guide/api-key-rotation]\n\nThere is insufficient evidence to determine the storage duration of processed idempotency keys. [backup-policy/data-location]",
+        "citations": [
+          "webhook-guide/duplicate-events",
+          "identity-guide/api-key-rotation",
+          "backup-policy/data-location"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 356,
+        "outputTokens": 97,
+        "generationMs": 748.132099997747,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b24\\b",
+          "passed": true
+        },
+        {
+          "pattern": "hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1423.2881999996607,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q16",
+      "question": "What happens after the final failed webhook retry?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "webhook-guide/delivery-retries"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.4222000000000037,
+      "passageIds": [
+        "webhook-guide/delivery-retries",
+        "webhook-guide/signature-verification",
+        "webhook-guide/duplicate-events"
+      ],
+      "timestamp": "2026-11-11T09:48:22.356522+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "After the final failed webhook retry, the event moves to the dead-letter queue. [webhook-guide/delivery-retries]",
+        "citations": [
+          "webhook-guide/delivery-retries"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 387,
+        "outputTokens": 38,
+        "generationMs": 331.1234000029799,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "dead.letter queue",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1010.336899998947,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q17",
+      "question": "What is the recovery point objective?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "backup-policy/recovery-objectives"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.1560000000000059,
+      "passageIds": [
+        "backup-policy/recovery-objectives",
+        "privacy-policy/backup-deletion",
+        "backup-policy/data-location"
+      ],
+      "timestamp": "2026-11-11T09:48:23.368081+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The recovery point objective (RPO) is four hours. [backup-policy/recovery-objectives]\n\nDeleted workspace data can remain in encrypted backups for up to 90 days before backup expiry removes it. [privacy-policy/backup-deletion]\n\nThe primary data location is Dublin, Ireland. [backup-policy/data-location]\n\nEncrypted backups are stored in Frankfurt, Germany. [backup-policy/data-location]\n\nBoth locations are within the European Union. [backup-policy/data-location]",
+        "citations": [
+          "backup-policy/recovery-objectives",
+          "privacy-policy/backup-deletion",
+          "backup-policy/data-location"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 345,
+        "outputTokens": 148,
+        "generationMs": 1103.1426999979885,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b(four|4)\\b",
+          "passed": true
+        },
+        {
+          "pattern": "hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1772.4804999998014,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q18",
+      "question": "What is the recovery time objective?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "backup-policy/recovery-objectives"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.36239999999999384,
+      "passageIds": [
+        "backup-policy/recovery-objectives",
+        "privacy-policy/backup-deletion",
+        "support-handbook/customer-updates"
+      ],
+      "timestamp": "2026-11-11T09:48:25.141855+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The recovery time objective (RTO) is eight hours. [backup-policy/recovery-objectives]\n\nThese are fictional planning objectives, not recovery performance measurements or a contractual uptime guarantee. [backup-policy/recovery-objectives]",
+        "citations": [
+          "backup-policy/recovery-objectives"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 355,
+        "outputTokens": 69,
+        "generationMs": 555.6967000011355,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b(eight|8)\\b",
+          "passed": true
+        },
+        {
+          "pattern": "hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1187.0296000015514,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q19",
+      "question": "Where are primary data and encrypted backups stored?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "backup-policy/data-location"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.17499999999999716,
+      "passageIds": [
+        "backup-policy/data-location",
+        "privacy-policy/backup-deletion",
+        "privacy-policy/workspace-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:26.330072+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Primary data is stored in Dublin, Ireland. [backup-policy/data-location]\n\nEncrypted backups are stored in Frankfurt, Germany. [backup-policy/data-location]\n\nBoth primary data and encrypted backups are within the European Union. [backup-policy/data-location]\n\nDeleted workspace data can remain in encrypted backups for up to 90 days. [privacy-policy/backup-deletion]\n\nBackup data is not restored into an active workspace except through an approved recovery process. [privacy-policy/backup-deletion]\n\nAfter a workspace deletion request is approved, active workspace data is deleted within 30 days. [privacy-policy/workspace-deletion]",
+        "citations": [
+          "backup-policy/data-location",
+          "privacy-policy/backup-deletion",
+          "privacy-policy/workspace-deletion"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 333,
+        "outputTokens": 187,
+        "generationMs": 1410.1413999997021,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Dublin",
+          "passed": true
+        },
+        {
+          "pattern": "Frankfurt",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 2061.344099998678,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q20",
+      "question": "What file format and encoding do workspace exports use?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "export-guide/export-format"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.19230000000000302,
+      "passageIds": [
+        "export-guide/export-format",
+        "operations-runbook/diagnostic-logs",
+        "privacy-policy/workspace-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:28.392714+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "error": "Current sources disagree on a labelled fact. Resolve the conflict with the source owners before generation."
+      },
+      "httpStatus": 409,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "endToEndMs": 2.1477999980561435,
+      "pipelineCheckPassed": false
+    },
+    {
+      "id": "Q21",
+      "question": "When does an export download link expire?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "export-guide/download-expiry"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.18089999999999407,
+      "passageIds": [
+        "export-guide/download-expiry",
+        "export-guide/audit-history",
+        "export-guide/export-format"
+      ],
+      "timestamp": "2026-11-11T09:48:28.396008+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "An export download link expires after 48 hours. [export-guide/download-expiry]\n\nDownload links cannot be extended. [export-guide/download-expiry]\n\nSupport staff cannot export a customer's audit history on the customer's behalf. [export-guide/audit-history]",
+        "citations": [
+          "export-guide/download-expiry",
+          "export-guide/audit-history"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 333,
+        "outputTokens": 83,
+        "generationMs": 645.0902999968093,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b48\\b",
+          "passed": true
+        },
+        {
+          "pattern": "hours?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1248.3572000019194,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q22",
+      "question": "Who can export the audit history?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "export-guide/audit-history"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.13739999999999952,
+      "passageIds": [
+        "export-guide/audit-history",
+        "export-guide/download-expiry",
+        "export-guide/export-format"
+      ],
+      "timestamp": "2026-11-11T09:48:29.645458+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Only a workspace owner can export the audit history. [export-guide/audit-history]\n\nSupport staff cannot export a customer's audit history on the customer's behalf. [export-guide/audit-history]",
+        "citations": [
+          "export-guide/audit-history"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 332,
+        "outputTokens": 61,
+        "generationMs": 516.7160999990301,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "workspace owner",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1162.5013000011677,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q23",
+      "question": "When is active workspace data deleted after an approved deletion request?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "privacy-policy/workspace-deletion"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.22049999999998704,
+      "passageIds": [
+        "privacy-policy/workspace-deletion",
+        "privacy-policy/backup-deletion",
+        "export-guide/download-expiry"
+      ],
+      "timestamp": "2026-11-11T09:48:30.809463+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Active workspace data is deleted within 30 days after an approved deletion request. [privacy-policy/workspace-deletion]\n\nThe workspace owner must confirm the request before deletion begins. [privacy-policy/workspace-deletion]\n\nDeleted workspace data can remain in encrypted backups for up to 90 days. [privacy-policy/backup-deletion]\n\nBackup data is not restored into an active workspace except through an approved recovery process. [privacy-policy/backup-deletion]\n\nAn export download link expires after 48 hours. [export-guide/download-expiry]\n\nRequest a new export if the download link has expired. [export-guide/download-expiry]",
+        "citations": [
+          "privacy-policy/workspace-deletion",
+          "privacy-policy/backup-deletion",
+          "export-guide/download-expiry"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 338,
+        "outputTokens": 188,
+        "generationMs": 1419.4160000006377,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b30\\b",
+          "passed": true
+        },
+        {
+          "pattern": "days?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 2083.8082999980543,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q24",
+      "question": "How long can deleted workspace data remain in encrypted backups?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "privacy-policy/backup-deletion"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.2574999999999932,
+      "passageIds": [
+        "privacy-policy/backup-deletion",
+        "backup-policy/data-location",
+        "privacy-policy/workspace-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:32.894505+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Deleted workspace data can remain in encrypted backups for up to 90 days. [privacy-policy/backup-deletion]\n\nBackup data is not restored into an active workspace except through an approved recovery process. [privacy-policy/backup-deletion]\n\nThe primary data location is Dublin, Ireland. [backup-policy/data-location]\n\nEncrypted backups are stored in Frankfurt, Germany. [backup-policy/data-location]\n\nBoth locations are within the European Union. [backup-policy/data-location]\n\nAfter a workspace deletion request is approved, active workspace data is deleted within 30 days. [privacy-policy/workspace-deletion]",
+        "citations": [
+          "privacy-policy/backup-deletion",
+          "backup-policy/data-location",
+          "privacy-policy/workspace-deletion"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 337,
+        "outputTokens": 183,
+        "generationMs": 1397.8457000011986,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b90\\b",
+          "passed": true
+        },
+        {
+          "pattern": "days?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1996.023799998511,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q25",
+      "question": "When is scheduled maintenance?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "maintenance-guide/maintenance-window"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.12660000000001048,
+      "passageIds": [
+        "maintenance-guide/advance-notice",
+        "maintenance-guide/maintenance-window"
+      ],
+      "timestamp": "2026-11-11T09:48:34.891789+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Scheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. [maintenance-guide/maintenance-window]\n\nCustomers receive at least seven days of advance notice for scheduled maintenance. [maintenance-guide/advance-notice]",
+        "citations": [
+          "maintenance-guide/maintenance-window",
+          "maintenance-guide/advance-notice"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 287,
+        "outputTokens": 72,
+        "generationMs": 553.0548000024282,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Tuesday",
+          "passed": true
+        },
+        {
+          "pattern": "02:00",
+          "passed": true
+        },
+        {
+          "pattern": "03:00",
+          "passed": true
+        },
+        {
+          "pattern": "UTC",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1165.8437000005506,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q26",
+      "question": "What advance notice is given for scheduled maintenance?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "maintenance-guide/advance-notice"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.1595000000000084,
+      "passageIds": [
+        "maintenance-guide/advance-notice",
+        "maintenance-guide/maintenance-window"
+      ],
+      "timestamp": "2026-11-11T09:48:36.058882+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Customers receive at least seven days of advance notice for scheduled maintenance. [maintenance-guide/advance-notice]\n\nScheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. [maintenance-guide/maintenance-window]",
+        "citations": [
+          "maintenance-guide/advance-notice",
+          "maintenance-guide/maintenance-window"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 291,
+        "outputTokens": 72,
+        "generationMs": 558.3010000009381,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b(seven|7)\\b",
+          "passed": true
+        },
+        {
+          "pattern": "days?",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1302.5347000002512,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q27",
+      "question": "How long are diagnostic logs retained?",
+      "category": "conflict",
+      "role": "support",
+      "expectedStatus": "conflict",
+      "relevantPassageIds": [
+        "logging-policy/diagnostic-logs",
+        "operations-runbook/diagnostic-logs"
+      ],
+      "retrievalStatus": "conflict",
+      "retrievalMs": 0.28350000000000364,
+      "passageIds": [
+        "logging-policy/diagnostic-logs",
+        "operations-runbook/diagnostic-logs"
+      ],
+      "timestamp": "2026-11-11T09:48:37.363161+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q28",
+      "question": "What is the diagnostic log retention in the standard workspace?",
+      "category": "conflict",
+      "role": "support",
+      "expectedStatus": "conflict",
+      "relevantPassageIds": [
+        "logging-policy/diagnostic-logs",
+        "operations-runbook/diagnostic-logs"
+      ],
+      "retrievalStatus": "conflict",
+      "retrievalMs": 0.18769999999999243,
+      "passageIds": [
+        "logging-policy/diagnostic-logs",
+        "operations-runbook/diagnostic-logs",
+        "privacy-policy/workspace-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:37.364461+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q29",
+      "question": "Are diagnostic logs retained for 30 or 90 days?",
+      "category": "conflict",
+      "role": "admin",
+      "expectedStatus": "conflict",
+      "relevantPassageIds": [
+        "logging-policy/diagnostic-logs",
+        "operations-runbook/diagnostic-logs"
+      ],
+      "retrievalStatus": "conflict",
+      "retrievalMs": 0.21410000000000196,
+      "passageIds": [
+        "operations-runbook/diagnostic-logs",
+        "logging-policy/diagnostic-logs",
+        "privacy-policy/backup-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:37.365800+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q30",
+      "question": "What is the emergency recovery code?",
+      "category": "access",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.14419999999999789,
+      "passageIds": [
+        "backup-policy/recovery-objectives",
+        "maintenance-guide/advance-notice",
+        "privacy-policy/backup-deletion"
+      ],
+      "timestamp": "2026-11-11T09:48:37.367388+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q31",
+      "question": "Who is the internal key custodian?",
+      "category": "access",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.14639999999999986,
+      "passageIds": [
+        "identity-guide/api-key-rotation",
+        "webhook-guide/duplicate-events"
+      ],
+      "timestamp": "2026-11-11T09:48:37.368507+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q32",
+      "question": "How does emergency recovery access work?",
+      "category": "access",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.1822999999999979,
+      "passageIds": [
+        "backup-policy/recovery-objectives",
+        "export-guide/export-format",
+        "maintenance-guide/advance-notice"
+      ],
+      "timestamp": "2026-11-11T09:48:37.369845+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q33",
+      "question": "What is the emergency recovery code?",
+      "category": "access",
+      "role": "admin",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "admin-runbook/emergency-recovery"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.15290000000000248,
+      "passageIds": [
+        "admin-runbook/emergency-recovery",
+        "backup-policy/recovery-objectives",
+        "maintenance-guide/advance-notice"
+      ],
+      "timestamp": "2026-11-11T09:48:37.371788+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The illustrative emergency recovery code is ALDER-DEMO-042. [admin-runbook/emergency-recovery]\n\nThis code is synthetic and grants access to nothing. [admin-runbook/emergency-recovery]\n\nCustomers receive at least seven days of advance notice for scheduled maintenance. [maintenance-guide/advance-notice]\n\nEmergency recovery access requires two administrators and a recorded change ticket. [admin-runbook/emergency-recovery]",
+        "citations": [
+          "admin-runbook/emergency-recovery",
+          "maintenance-guide/advance-notice"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 353,
+        "outputTokens": 130,
+        "generationMs": 1032.444000000396,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "ALDER-DEMO-042",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1975.72880000007,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q34",
+      "question": "Who is the internal key custodian?",
+      "category": "access",
+      "role": "admin",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "admin-runbook/internal-key-custody"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.16389999999999816,
+      "passageIds": [
+        "admin-runbook/internal-key-custody",
+        "identity-guide/api-key-rotation",
+        "webhook-guide/duplicate-events"
+      ],
+      "timestamp": "2026-11-11T09:48:39.348785+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "The internal key custodian is the Security Operations team. [admin-runbook/internal-key-custody]",
+        "citations": [
+          "admin-runbook/internal-key-custody"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 362,
+        "outputTokens": 34,
+        "generationMs": 302.8978999973333,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Security Operations",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 914.1022999974666,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q35",
+      "question": "What does the Enterprise plan cost per month?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.16679999999999495,
+      "passageIds": [
+        "identity-guide/single-sign-on",
+        "identity-guide/user-provisioning"
+      ],
+      "timestamp": "2026-11-11T09:48:40.264381+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q36",
+      "question": "What is the contractual uptime SLA percentage?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.28479999999998995,
+      "passageIds": [
+        "backup-policy/recovery-objectives"
+      ],
+      "timestamp": "2026-11-11T09:48:40.265630+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q37",
+      "question": "Does Alder Cloud hold HIPAA certification?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.13360000000000127,
+      "passageIds": [],
+      "timestamp": "2026-11-11T09:48:40.267133+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q38",
+      "question": "What is the phone support telephone number?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.15439999999999543,
+      "passageIds": [
+        "support-handbook/incident-escalation",
+        "support-handbook/priority-one",
+        "identity-guide/multi-factor-authentication"
+      ],
+      "timestamp": "2026-11-11T09:48:40.268543+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q39",
+      "question": "How much storage capacity is included in the Starter plan?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.1706000000000074,
+      "passageIds": [
+        "identity-guide/single-sign-on",
+        "identity-guide/user-provisioning"
+      ],
+      "timestamp": "2026-11-11T09:48:40.269891+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q40",
+      "question": "Which payment methods are accepted for invoices?",
+      "category": "missing",
+      "role": "support",
+      "expectedStatus": "insufficient",
+      "relevantPassageIds": [],
+      "retrievalStatus": "insufficient",
+      "retrievalMs": 0.1576999999999913,
+      "passageIds": [],
+      "timestamp": "2026-11-11T09:48:40.271284+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": false,
+      "response": null,
+      "httpStatus": null,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "skippedReason": "The browser disables generation after an insufficient-evidence or conflict decision.",
+      "pipelineCheckPassed": true
+    }
+  ],
+  "admissionProbes": [
+    {
+      "name": "restricted administrator passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 3.613600001699524
+    },
+    {
+      "name": "superseded passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 1.966699997865362
+    },
+    {
+      "name": "draft passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 2.0467999966058414
+    },
+    {
+      "name": "unknown passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 1.9964999992225785
+    },
+    {
+      "name": "omitted conflicting source",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "passed": true,
+      "response": {
+        "error": "Current sources disagree on a labelled fact. Resolve the conflict with the source owners before generation."
+      },
+      "endToEndMs": 2.1157999981369358
+    },
+    {
+      "name": "client role override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 3.0421000010392163
+    },
+    {
+      "name": "client evidence override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 2.6889000000664964
+    }
+  ],
+  "activeModelsAfterRun": [
+    {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "size": 2561000078,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-11-11T11:53:40.2613055+02:00",
+      "size_vram": 2561000078,
+      "context_length": 4096,
+      "runner": "llamacpp"
+    }
+  ],
+  "summary": {
+    "questionCount": 40,
+    "retrievalDecisionsMatchingLabels": 38,
+    "generationRequests": 26,
+    "acceptedDrafts": 25,
+    "pipelineChecksPassed": 37,
+    "admissionProbesPassed": 7,
+    "admissionProbeCount": 7,
+    "generationP50Ms": 645.0902999968093,
+    "generationP95Ms": 1419.4160000006377,
+    "inputTokens": 8655,
+    "outputTokens": 2361,
+    "missingUsageResponses": 0
+  }
+}

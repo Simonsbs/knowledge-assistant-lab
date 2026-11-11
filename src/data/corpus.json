@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "id": "alder-cloud-v1",
+  "title": "Alder Cloud",
+  "description": "A fictional software company. Every policy, support target, code and record in this pack is synthetic.",
+  "asOf": "2026-11-11",
+  "documents": [
+    {
+      "id": "admin-runbook",
+      "title": "Restricted administrator recovery runbook",
+      "owner": "Platform Security",
+      "updatedAt": "2026-10-25",
+      "status": "current",
+      "roles": [
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "admin-runbook/emergency-recovery",
+          "heading": "Emergency recovery",
+          "text": "Emergency recovery access requires two administrators and a recorded change ticket. The illustrative emergency recovery code is ALDER-DEMO-042. This code is synthetic and grants access to nothing."
+        },
+        {
+          "id": "admin-runbook/internal-key-custody",
+          "heading": "Internal key custody",
+          "text": "The internal key custodian is the Security Operations team. Encryption key rotation approval requires the security lead. No real encryption keys are included in this demonstration."
+        }
+      ]
+    },
+    {
+      "id": "backup-policy",
+      "title": "Backup and recovery policy",
+      "owner": "Service Reliability",
+      "updatedAt": "2026-10-08",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "backup-policy/recovery-objectives",
+          "heading": "Recovery objectives",
+          "text": "The recovery point objective (RPO) is four hours. The recovery time objective (RTO) is eight hours. These are fictional planning objectives, not recovery performance measurements or a contractual uptime guarantee."
+        },
+        {
+          "id": "backup-policy/data-location",
+          "heading": "Data location",
+          "text": "The primary data location is Dublin, Ireland. Encrypted backups are stored in Frankfurt, Germany. Both locations are within the European Union."
+        }
+      ]
+    },
+    {
+      "id": "export-guide",
+      "title": "Workspace export guide",
+      "owner": "Customer Operations",
+      "updatedAt": "2026-09-22",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "export-guide/export-format",
+          "heading": "Export format",
+          "text": "Workspace exports use CSV files encoded as UTF-8. An export includes records that the requesting user is authorised to access in the selected workspace."
+        },
+        {
+          "id": "export-guide/download-expiry",
+          "heading": "Download expiry",
+          "text": "An export download link expires after 48 hours. Request a new export if the download link has expired. Download links cannot be extended."
+        },
+        {
+          "id": "export-guide/audit-history",
+          "heading": "Audit history",
+          "text": "Only a workspace owner can export the audit history. Open Settings > Audit > Export and choose the required date range. Support staff cannot export a customer's audit history on the customer's behalf."
+        }
+      ]
+    },
+    {
+      "id": "identity-guide",
+      "title": "Identity and API access guide",
+      "owner": "Platform Security",
+      "updatedAt": "2026-10-12",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "identity-guide/single-sign-on",
+          "heading": "Single sign-on",
+          "text": "Only the Enterprise plan supports SAML 2.0 single sign-on (SSO). A workspace administrator configures the identity provider from Settings > Identity. The Starter plan does not include SAML single sign-on."
+        },
+        {
+          "id": "identity-guide/multi-factor-authentication",
+          "heading": "Multi-factor authentication",
+          "text": "Multi-factor authentication (MFA) is required for all administrators and support staff. A workspace administrator can require MFA for other workspace users."
+        },
+        {
+          "id": "identity-guide/user-provisioning",
+          "heading": "User provisioning",
+          "text": "SCIM user provisioning is available on the Enterprise plan. Provisioning creates and deactivates workspace users through the configured identity provider."
+        },
+        {
+          "id": "identity-guide/api-key-rotation",
+          "heading": "API key rotation",
+          "text": "API keys must be rotated every 90 days. Keep the previous API key active for no more than 24 hours during a planned rotation, then revoke it. Never include actual keys in support tickets."
+        }
+      ]
+    },
+    {
+      "id": "logging-policy",
+      "title": "Diagnostic logging policy",
+      "owner": "Platform Security",
+      "updatedAt": "2026-10-18",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "logging-policy/diagnostic-logs",
+          "heading": "Diagnostic logs",
+          "text": "Diagnostic logs are retained for 30 days in the standard workspace. Support can request a diagnostic log export through the incident ticket. This policy is marked current and has the same approval level as the operations runbook.",
+          "fact": {
+            "key": "diagnostic-retention",
+            "value": "30 days"
+          }
+        }
+      ]
+    },
+    {
+      "id": "maintenance-guide",
+      "title": "Scheduled maintenance guide",
+      "owner": "Service Reliability",
+      "updatedAt": "2026-09-10",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "maintenance-guide/maintenance-window",
+          "heading": "Maintenance window",
+          "text": "Scheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. The status page lists each approved maintenance window and its expected impact."
+        },
+        {
+          "id": "maintenance-guide/advance-notice",
+          "heading": "Advance notice",
+          "text": "Customers receive at least seven days of advance notice for scheduled maintenance. Emergency maintenance can occur without the normal notice period, with updates on the status page."
+        }
+      ]
+    },
+    {
+      "id": "operations-runbook",
+      "title": "Diagnostic operations runbook",
+      "owner": "Service Reliability",
+      "updatedAt": "2026-10-19",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "operations-runbook/diagnostic-logs",
+          "heading": "Diagnostic logs",
+          "text": "Diagnostic logs are retained for 90 days in the standard workspace. Operators should attach diagnostic log exports to the incident ticket. This runbook is marked current and has the same approval level as the diagnostic logging policy. The inconsistency is intentional in this synthetic knowledge pack.",
+          "fact": {
+            "key": "diagnostic-retention",
+            "value": "90 days"
+          }
+        }
+      ]
+    },
+    {
+      "id": "privacy-policy",
+      "title": "Workspace deletion and privacy policy",
+      "owner": "Privacy Operations",
+      "updatedAt": "2026-10-03",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "privacy-policy/workspace-deletion",
+          "heading": "Workspace deletion",
+          "text": "After a workspace deletion request is approved, active workspace data is deleted within 30 days. The workspace owner must confirm the request before deletion begins."
+        },
+        {
+          "id": "privacy-policy/backup-deletion",
+          "heading": "Backup deletion",
+          "text": "Deleted workspace data can remain in encrypted backups for up to 90 days before backup expiry removes it. Backup data is not restored into an active workspace except through an approved recovery process."
+        }
+      ]
+    },
+    {
+      "id": "support-handbook-2025",
+      "title": "Alder Cloud support handbook, 2025 archive",
+      "owner": "Customer Operations",
+      "updatedAt": "2025-07-01",
+      "status": "superseded",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "support-handbook-2025/priority-one",
+          "heading": "Priority one",
+          "text": "The initial P1 incident response target is 60 minutes. Priority one incidents are supported during business hours only. This archived support handbook was replaced by the October 2026 handbook and must not be used for current support commitments.",
+          "fact": {
+            "key": "p1-response",
+            "value": "60 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "support-handbook",
+      "title": "Alder Cloud support handbook",
+      "owner": "Customer Operations",
+      "updatedAt": "2026-10-20",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "support-handbook/priority-one",
+          "heading": "Priority one",
+          "text": "For a priority one (P1) incident, the initial response target is 15 minutes, available 24 hours a day, seven days a week. A priority one incident means the production service is unavailable for all users. This is a fictional support target, not a measured service result.",
+          "fact": {
+            "key": "p1-response",
+            "value": "15 minutes"
+          }
+        },
+        {
+          "id": "support-handbook/priority-two",
+          "heading": "Priority two",
+          "text": "For a priority two (P2) incident, the initial response target is four business hours. Business hours are Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays."
+        },
+        {
+          "id": "support-handbook/incident-escalation",
+          "heading": "Incident escalation",
+          "text": "If a priority one incident has no assigned owner after 30 minutes, the support lead must open an incident bridge and page the duty incident commander."
+        },
+        {
+          "id": "support-handbook/customer-updates",
+          "heading": "Customer updates",
+          "text": "During an active priority one incident, the incident commander sends a customer status update every 30 minutes. Updates state the known impact, current investigation and time of the next update."
+        }
+      ]
+    },
+    {
+      "id": "support-roadmap",
+      "title": "Draft support response proposal",
+      "owner": "Product Planning",
+      "updatedAt": "2026-11-02",
+      "status": "draft",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "support-roadmap/priority-one",
+          "heading": "Priority one",
+          "text": "The proposed initial P1 incident response target is 5 minutes, available 24 hours a day. This is an unapproved draft proposal. The five-minute target has not been adopted and must not be quoted as a current support commitment.",
+          "fact": {
+            "key": "p1-response",
+            "value": "5 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "webhook-guide",
+      "title": "Webhook delivery and verification guide",
+      "owner": "Integrations Engineering",
+      "updatedAt": "2026-09-15",
+      "status": "current",
+      "roles": [
+        "support",
+        "admin"
+      ],
+      "passages": [
+        {
+          "id": "webhook-guide/delivery-retries",
+          "heading": "Delivery retries",
+          "text": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. After the final failed retry, the event moves to the dead-letter queue. A workspace administrator can inspect and replay a dead-letter event."
+        },
+        {
+          "id": "webhook-guide/signature-verification",
+          "heading": "Signature verification",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        },
+        {
+          "id": "webhook-guide/duplicate-events",
+          "heading": "Duplicate events",
+          "text": "The Idempotency-Key header identifies duplicate webhook events. Store processed idempotency keys for 24 hours and return the previous delivery result for a duplicate. Do not apply a duplicate event a second time."
+        }
+      ]
+    }
+  ]
+}

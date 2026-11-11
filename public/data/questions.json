@@ -1,0 +1,387 @@
+[
+  {
+    "id": "Q01",
+    "question": "What is the initial P1 incident response target?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "support-handbook/priority-one"
+    ]
+  },
+  {
+    "id": "Q02",
+    "question": "What is the initial P2 incident response target?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "support-handbook/priority-two"
+    ]
+  },
+  {
+    "id": "Q03",
+    "question": "What are the support business hours?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "support-handbook/priority-two"
+    ]
+  },
+  {
+    "id": "Q04",
+    "question": "When must the support lead open an incident bridge?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "support-handbook/incident-escalation"
+    ]
+  },
+  {
+    "id": "Q05",
+    "question": "How often does the incident commander send a customer status update?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "support-handbook/customer-updates"
+    ]
+  },
+  {
+    "id": "Q06",
+    "question": "Which plan supports SAML single sign-on?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "identity-guide/single-sign-on"
+    ]
+  },
+  {
+    "id": "Q07",
+    "question": "Who requires multi-factor authentication?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "identity-guide/multi-factor-authentication"
+    ]
+  },
+  {
+    "id": "Q08",
+    "question": "Which plan supports SCIM user provisioning?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "identity-guide/user-provisioning"
+    ]
+  },
+  {
+    "id": "Q09",
+    "question": "How often must API keys be rotated?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "identity-guide/api-key-rotation"
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "How long can the previous API key stay active during rotation?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "identity-guide/api-key-rotation"
+    ]
+  },
+  {
+    "id": "Q11",
+    "question": "What is the webhook delivery retry schedule?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/delivery-retries"
+    ]
+  },
+  {
+    "id": "Q12",
+    "question": "Which algorithm verifies webhook signatures?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/signature-verification"
+    ]
+  },
+  {
+    "id": "Q13",
+    "question": "When should an old webhook timestamp be rejected?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/signature-verification"
+    ]
+  },
+  {
+    "id": "Q14",
+    "question": "How are duplicate webhook events identified?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/duplicate-events"
+    ]
+  },
+  {
+    "id": "Q15",
+    "question": "How long are processed idempotency keys stored?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/duplicate-events"
+    ]
+  },
+  {
+    "id": "Q16",
+    "question": "What happens after the final failed webhook retry?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "webhook-guide/delivery-retries"
+    ]
+  },
+  {
+    "id": "Q17",
+    "question": "What is the recovery point objective?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "backup-policy/recovery-objectives"
+    ]
+  },
+  {
+    "id": "Q18",
+    "question": "What is the recovery time objective?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "backup-policy/recovery-objectives"
+    ]
+  },
+  {
+    "id": "Q19",
+    "question": "Where are primary data and encrypted backups stored?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "backup-policy/data-location"
+    ]
+  },
+  {
+    "id": "Q20",
+    "question": "What file format and encoding do workspace exports use?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "export-guide/export-format"
+    ]
+  },
+  {
+    "id": "Q21",
+    "question": "When does an export download link expire?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "export-guide/download-expiry"
+    ]
+  },
+  {
+    "id": "Q22",
+    "question": "Who can export the audit history?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "export-guide/audit-history"
+    ]
+  },
+  {
+    "id": "Q23",
+    "question": "When is active workspace data deleted after an approved deletion request?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "privacy-policy/workspace-deletion"
+    ]
+  },
+  {
+    "id": "Q24",
+    "question": "How long can deleted workspace data remain in encrypted backups?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "privacy-policy/backup-deletion"
+    ]
+  },
+  {
+    "id": "Q25",
+    "question": "When is scheduled maintenance?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "maintenance-guide/maintenance-window"
+    ]
+  },
+  {
+    "id": "Q26",
+    "question": "What advance notice is given for scheduled maintenance?",
+    "category": "supported",
+    "role": "support",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "maintenance-guide/advance-notice"
+    ]
+  },
+  {
+    "id": "Q27",
+    "question": "How long are diagnostic logs retained?",
+    "category": "conflict",
+    "role": "support",
+    "expectedStatus": "conflict",
+    "relevantPassageIds": [
+      "logging-policy/diagnostic-logs",
+      "operations-runbook/diagnostic-logs"
+    ]
+  },
+  {
+    "id": "Q28",
+    "question": "What is the diagnostic log retention in the standard workspace?",
+    "category": "conflict",
+    "role": "support",
+    "expectedStatus": "conflict",
+    "relevantPassageIds": [
+      "logging-policy/diagnostic-logs",
+      "operations-runbook/diagnostic-logs"
+    ]
+  },
+  {
+    "id": "Q29",
+    "question": "Are diagnostic logs retained for 30 or 90 days?",
+    "category": "conflict",
+    "role": "admin",
+    "expectedStatus": "conflict",
+    "relevantPassageIds": [
+      "logging-policy/diagnostic-logs",
+      "operations-runbook/diagnostic-logs"
+    ]
+  },
+  {
+    "id": "Q30",
+    "question": "What is the emergency recovery code?",
+    "category": "access",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q31",
+    "question": "Who is the internal key custodian?",
+    "category": "access",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q32",
+    "question": "How does emergency recovery access work?",
+    "category": "access",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q33",
+    "question": "What is the emergency recovery code?",
+    "category": "access",
+    "role": "admin",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "admin-runbook/emergency-recovery"
+    ]
+  },
+  {
+    "id": "Q34",
+    "question": "Who is the internal key custodian?",
+    "category": "access",
+    "role": "admin",
+    "expectedStatus": "answered",
+    "relevantPassageIds": [
+      "admin-runbook/internal-key-custody"
+    ]
+  },
+  {
+    "id": "Q35",
+    "question": "What does the Enterprise plan cost per month?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q36",
+    "question": "What is the contractual uptime SLA percentage?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q37",
+    "question": "Does Alder Cloud hold HIPAA certification?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q38",
+    "question": "What is the phone support telephone number?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q39",
+    "question": "How much storage capacity is included in the Starter plan?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  },
+  {
+    "id": "Q40",
+    "question": "Which payment methods are accepted for invoices?",
+    "category": "missing",
+    "role": "support",
+    "expectedStatus": "insufficient",
+    "relevantPassageIds": []
+  }
+]

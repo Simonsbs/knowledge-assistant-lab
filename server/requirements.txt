@@ -1,0 +1,2 @@
+# Optional local inference. Browser evidence mode has no Python dependencies.
+langchain-ollama==1.1.0

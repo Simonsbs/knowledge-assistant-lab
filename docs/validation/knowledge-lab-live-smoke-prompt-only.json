@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-11T09:44:39.372098+00:00",
+  "finishedAt": "2026-11-11T09:44:44.874214+00:00",
+  "runtime": "Python 3.14.3 on Windows/AMD64",
+  "ollamaVersion": "0.40.16",
+  "model": "llama3.2:3b",
+  "modelDigest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "modelDetails": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072,
+    "runner": "ggml"
+  },
+  "adapterSha256": "87edf12d852b479441357cb4b266dbd6e78f2ea3d090d5eea8338af2bda4b788",
+  "corpusId": "alder-cloud-v1",
+  "corpusSha256": "a291225685becc13d711f482248048188369c42b7232eed9863544ab4c58914d",
+  "questionsSha256": "5fc549ffb542ebbe620f197e21ffb24f1971ba89084288715c9af99b6e8d68ee",
+  "engineSha256": "5119fce73c7a4d5b0a646db867b170fce2b88699f59090da9d8c0f0ba480c204",
+  "configuration": {
+    "profile": "governed",
+    "topK": 3,
+    "temperature": 0,
+    "numPredict": 700,
+    "transport": "isolated loopback HTTP adapters with server-owned support/admin roles"
+  },
+  "answerChecksSha256": "8c75b43d3ac3a1f04f823a9a6ee084ef38a1920b32132050ad1b55bdf9c10f9c",
+  "review": "Pattern checks and citation membership are automated. Semantic human review is pending.",
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What is the initial P1 incident response target?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/priority-one"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.9640000000000128,
+      "passageIds": [
+        "support-handbook/priority-one",
+        "support-handbook/priority-two",
+        "support-handbook/incident-escalation"
+      ],
+      "timestamp": "2026-11-11T09:44:39.416512+00:00",
+      "decisionMatchesLabel": true,
+      "modelCalled": true,
+      "response": {
+        "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+      },
+      "httpStatus": 502,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "endToEndMs": 2726.279800001066,
+      "pipelineCheckPassed": false
+    },
+    {
+      "id": "Q06",
+      "question": "Which plan supports SAML single sign-on?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "identity-guide/single-sign-on"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.27009999999999934,
+      "passageIds": [
+        "identity-guide/single-sign-on",
+        "identity-guide/user-provisioning"
+      ],
+      "timestamp": "2026-11-11T09:44:42.143856+00:00",
+      "decisionMatchesLabel": true,
+      "modelCalled": true,
+      "response": {
+        "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+      },
+      "httpStatus": 502,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "endToEndMs": 1096.5996000013547,
+      "pipelineCheckPassed": false
+    },
+    {
+      "id": "Q21",
+      "question": "When does an export download link expire?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "export-guide/download-expiry"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.18210000000000548,
+      "passageIds": [
+        "export-guide/download-expiry",
+        "export-guide/audit-history",
+        "export-guide/export-format"
+      ],
+      "timestamp": "2026-11-11T09:44:43.241354+00:00",
+      "decisionMatchesLabel": true,
+      "modelCalled": true,
+      "response": {
+        "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+      },
+      "httpStatus": 502,
+      "expectedEvidenceCited": null,
+      "answerPatternChecks": null,
+      "endToEndMs": 1065.3419999980542,
+      "pipelineCheckPassed": false
+    }
+  ],
+  "admissionProbes": [
+    {
+      "name": "restricted administrator passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 4.3488000010256656
+    },
+    {
+      "name": "superseded passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 3.9735999998811167
+    },
+    {
+      "name": "draft passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 4.5638999981747475
+    },
+    {
+      "name": "unknown passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 2.897100002883235
+    },
+    {
+      "name": "omitted conflicting source",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "passed": true,
+      "response": {
+        "error": "Current sources disagree on a labelled fact. Resolve the conflict with the source owners before generation."
+      },
+      "endToEndMs": 3.958599998441059
+    },
+    {
+      "name": "client role override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 18.875599998864345
+    },
+    {
+      "name": "client evidence override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 9.802699998544995
+    }
+  ],
+  "activeModelsAfterRun": [
+    {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "size": 2561000078,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-11-11T11:49:44.3046941+02:00",
+      "size_vram": 2561000078,
+      "context_length": 4096,
+      "runner": "llamacpp"
+    }
+  ],
+  "summary": {
+    "questionCount": 3,
+    "retrievalDecisionsMatchingLabels": 3,
+    "generationRequests": 3,
+    "acceptedDrafts": 0,
+    "pipelineChecksPassed": 0,
+    "admissionProbesPassed": 7,
+    "admissionProbeCount": 7,
+    "generationP50Ms": null,
+    "generationP95Ms": null,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "missingUsageResponses": 0
+  }
+}

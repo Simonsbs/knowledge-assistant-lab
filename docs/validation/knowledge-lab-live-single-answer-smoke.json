@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-11T10:03:13.039228+00:00",
+  "finishedAt": "2026-11-11T10:03:18.261885+00:00",
+  "runtime": "Python 3.14.3 on Windows/AMD64",
+  "ollamaVersion": "0.40.16",
+  "model": "llama3.2:3b",
+  "modelDigest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "modelDetails": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072,
+    "runner": "ggml"
+  },
+  "adapterSha256": "2ab21185806bcf34f99449d4fc18bb8e45e7712897249fc50f33494384c29c30",
+  "corpusId": "alder-cloud-v1",
+  "corpusSha256": "a291225685becc13d711f482248048188369c42b7232eed9863544ab4c58914d",
+  "questionsSha256": "5fc549ffb542ebbe620f197e21ffb24f1971ba89084288715c9af99b6e8d68ee",
+  "engineSha256": "5afbb0b6d03e6ac6e9ac919045777fbccc9f07ff31c483e57bcaeaacbd9bbf3c",
+  "configuration": {
+    "profile": "governed",
+    "topK": 3,
+    "temperature": 0,
+    "numPredict": 700,
+    "contextSelection": "Only retrieved passages meeting the shared query-coverage evidence threshold are submitted.",
+    "transport": "isolated loopback HTTP adapters with server-owned support/admin roles"
+  },
+  "answerChecksSha256": "cbee4be14dbb509c1a6ba48a52445d1822f1e48d889ba995404f706305528f2e",
+  "review": "Pattern checks and citation membership are automated. Semantic human review is pending.",
+  "usageScope": "Token totals and generation timings cover accepted drafts. HTTP generation requests can also be rejected before inference.",
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What is the initial P1 incident response target?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "support-handbook/priority-one"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.8922000000000025,
+      "passageIds": [
+        "support-handbook/priority-one",
+        "support-handbook/priority-two",
+        "support-handbook/incident-escalation"
+      ],
+      "generationPassageIds": [
+        "support-handbook/priority-one",
+        "support-handbook/priority-two"
+      ],
+      "timestamp": "2026-11-11T10:03:13.089662+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "15 minutes, available 24 hours a day, seven days a week. [support-handbook/priority-one]",
+        "citations": [
+          "support-handbook/priority-one"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 377,
+        "outputTokens": 36,
+        "generationMs": 590.66189999794,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "\\b15\\b",
+          "passed": true
+        },
+        {
+          "pattern": "minute",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 2649.5491999994556,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q19",
+      "question": "Where are primary data and encrypted backups stored?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "backup-policy/data-location"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.18489999999999895,
+      "passageIds": [
+        "backup-policy/data-location",
+        "privacy-policy/backup-deletion",
+        "privacy-policy/workspace-deletion"
+      ],
+      "generationPassageIds": [
+        "backup-policy/data-location",
+        "privacy-policy/backup-deletion"
+      ],
+      "timestamp": "2026-11-11T10:03:15.740309+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Primary data is stored in Dublin, Ireland, and encrypted backups are stored in Frankfurt, Germany. [backup-policy/data-location]",
+        "citations": [
+          "backup-policy/data-location"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 332,
+        "outputTokens": 38,
+        "generationMs": 336.01940000153263,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "Dublin",
+          "passed": true
+        },
+        {
+          "pattern": "Frankfurt",
+          "passed": true
+        },
+        {
+          "pattern": "^(?![\\s\\S]*Backup data is not restored into an active workspace\\.)[\\s\\S]*$",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 1052.674799997476,
+      "pipelineCheckPassed": true
+    },
+    {
+      "id": "Q20",
+      "question": "What file format and encoding do workspace exports use?",
+      "category": "supported",
+      "role": "support",
+      "expectedStatus": "answered",
+      "relevantPassageIds": [
+        "export-guide/export-format"
+      ],
+      "retrievalStatus": "answered",
+      "retrievalMs": 0.1980000000000075,
+      "passageIds": [
+        "export-guide/export-format",
+        "operations-runbook/diagnostic-logs",
+        "privacy-policy/workspace-deletion"
+      ],
+      "generationPassageIds": [
+        "export-guide/export-format"
+      ],
+      "timestamp": "2026-11-11T10:03:16.794242+00:00",
+      "decisionMatchesLabel": true,
+      "generationRequested": true,
+      "response": {
+        "answer": "Workspace exports use CSV files encoded as UTF-8. [export-guide/export-format]",
+        "citations": [
+          "export-guide/export-format"
+        ],
+        "model": "llama3.2:3b",
+        "inputTokens": 282,
+        "outputTokens": 30,
+        "generationMs": 253.25730000258773,
+        "citationCheck": "Inline citations match admitted source IDs. This does not prove semantic groundedness."
+      },
+      "httpStatus": 200,
+      "expectedEvidenceCited": true,
+      "answerPatternChecks": [
+        {
+          "pattern": "CSV",
+          "passed": true
+        },
+        {
+          "pattern": "UTF.8",
+          "passed": true
+        }
+      ],
+      "endToEndMs": 945.0689999976021,
+      "pipelineCheckPassed": true
+    }
+  ],
+  "admissionProbes": [
+    {
+      "name": "restricted administrator passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 2.3330000003625173
+    },
+    {
+      "name": "superseded passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 1.989999997022096
+    },
+    {
+      "name": "draft passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 2.640499998960877
+    },
+    {
+      "name": "unknown passage",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "passed": true,
+      "response": {
+        "error": "One or more requested passages are unavailable to this service role."
+      },
+      "endToEndMs": 2.497199999197619
+    },
+    {
+      "name": "omitted conflicting source",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "passed": true,
+      "response": {
+        "error": "Current sources disagree on a labelled fact. Resolve the conflict with the source owners before generation."
+      },
+      "endToEndMs": 1.8474000025889836
+    },
+    {
+      "name": "client role override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 2.0879000003333203
+    },
+    {
+      "name": "client evidence override",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "passed": true,
+      "response": {
+        "error": "Supply question, passageIds, profile and corpusId only. The role is configured by the server."
+      },
+      "endToEndMs": 1.9190000020898879
+    }
+  ],
+  "activeModelsAfterRun": [
+    {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "size": 2561000078,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-11-11T12:08:17.7372319+02:00",
+      "size_vram": 2561000078,
+      "context_length": 4096,
+      "runner": "llamacpp"
+    }
+  ],
+  "summary": {
+    "questionCount": 3,
+    "retrievalDecisionsMatchingLabels": 3,
+    "generationRequests": 3,
+    "acceptedDrafts": 3,
+    "pipelineChecksPassed": 3,
+    "admissionProbesPassed": 7,
+    "admissionProbeCount": 7,
+    "generationP50Ms": 336.01940000153263,
+    "generationP95Ms": 590.66189999794,
+    "inputTokens": 991,
+    "outputTokens": 104,
+    "missingUsageResponses": 0
+  }
+}

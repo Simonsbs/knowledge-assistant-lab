@@ -1,0 +1,17 @@
+[
+  {
+    "id": "Q01",
+    "raw": "{\"answer\": \"The initial P1 incident response target is 15 minutes, available 24 hours a day, seven days a week.\", \"citations\": [\"support-handbook/priority-one\"]}",
+    "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+  },
+  {
+    "id": "Q06",
+    "raw": "{\"answer\": \"The Enterprise plan supports SAML single sign-on.\", \"citations\": [\"identity-guide/single-sign-on\"]}",
+    "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+  },
+  {
+    "id": "Q21",
+    "raw": "{\"answer\": \"An export download link expires after 48 hours.\", \"citations\": [\"export-guide/download-expiry\"]}",
+    "error": "The model cited a source outside the admitted context, or omitted its inline citations."
+  }
+]
