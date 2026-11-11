@@ -26,5 +26,6 @@
   "Q25": ["Tuesday", "02:00", "03:00", "UTC"],
   "Q26": ["\\b(seven|7)\\b", "days?"],
   "Q33": ["ALDER-DEMO-042"],
-  "Q34": ["Security Operations"]
+  "Q34": ["Security Operations"],
+  "V08": ["^(?![\\s\\S]*administrators and support staff)[\\s\\S]*$"]
 }

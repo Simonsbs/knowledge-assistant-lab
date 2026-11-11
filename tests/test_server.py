@@ -185,6 +185,8 @@ class OllamaAdapterTests(unittest.TestCase):
             def do_POST(self):
                 payload = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
                 assert payload["model"] == "fixture:latest"
+                assert payload["think"] is False
+                assert payload["options"]["num_ctx"] == 4096
                 allowed = payload["format"]["properties"]["claims"]["items"]["properties"]["citations"]["items"]["enum"]
                 assert allowed == ["support-handbook/priority-one"]
                 self.reply({"model": "fixture:latest", "created_at": "2026-11-11T00:00:00Z",

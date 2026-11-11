@@ -43,10 +43,22 @@ def payload_for(question, passage_ids, corpus_id):
     return {"question": question, "passageIds": passage_ids, "profile": "governed", "corpusId": corpus_id}
 
 
+def answer_pattern_checks(answer, patterns):
+    # Source IDs can contain answer keywords. They are not answer content.
+    answer_text = re.sub(r"\[[a-z0-9/-]+\]", "", answer)
+    return [{"pattern": pattern, "passed": bool(re.search(pattern, answer_text, re.IGNORECASE))}
+            for pattern in patterns]
+
+
+def source_hash(path):
+    return hashlib.sha256(path.read_text(encoding="utf-8").encode("utf-8")).hexdigest()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", default=os.getenv("LAB_MODEL", "llama3.2:3b"))
+    parser.add_argument("--model", default=os.getenv("LAB_MODEL", "qwen3:8b"))
     parser.add_argument("--questions", help="Optional comma-separated IDs for a smoke run")
+    parser.add_argument("--dataset", choices=["all", "development", "verification"], default="all")
     parser.add_argument("--output", default="docs/validation/knowledge-lab-live-evaluation.json")
     args = parser.parse_args()
     config = lab.Config(model=args.model, ollama_url=os.getenv("LAB_OLLAMA_URL", "http://127.0.0.1:11434"))
@@ -54,7 +66,7 @@ def main():
     if not status["ready"]:
         raise SystemExit(status["message"])
     fixture = json.loads(subprocess.run(
-        ["node", "--experimental-strip-types", "scripts/live-cases.mjs"], cwd=ROOT,
+        ["node", "--experimental-strip-types", "scripts/live-cases.mjs", "--dataset", args.dataset], cwd=ROOT,
         check=True, capture_output=True, text=True, encoding="utf-8").stdout)
     cases = fixture.pop("cases")
     if args.questions:
@@ -72,22 +84,23 @@ def main():
         output = ROOT / output
     output.parent.mkdir(parents=True, exist_ok=True)
     report = {
-        "schemaVersion": 1, "startedAt": timestamp(), "finishedAt": None,
+        "schemaVersion": 2, "dataset": args.dataset, "startedAt": timestamp(), "finishedAt": None,
         "runtime": f"Python {platform.python_version()} on {platform.system()}/{platform.machine()}",
         "ollamaVersion": version["version"], "model": config.model,
         "modelDigest": model["digest"], "modelDetails": model.get("details"),
-        "adapterSha256": hashlib.sha256(Path(lab.__file__).read_bytes()).hexdigest(), **fixture,
-        "configuration": {"profile": "governed", "topK": 3, "temperature": 0, "numPredict": 700,
-                          "contextSelection": "Only retrieved passages meeting the shared query-coverage evidence threshold are submitted.",
+        "adapterSha256": source_hash(Path(lab.__file__)), **fixture,
+        "evaluatorSha256": source_hash(Path(__file__)),
+        "configuration": {"profile": "governed", "topK": 3, "temperature": 0, "numPredict": 700, "thinking": False, "contextLength": 4096,
+                          "contextSelection": "Governed Porter-normalized retrieval with 0.6 passage coverage and 0.75 vocabulary coverage; only evidence-qualified passages are submitted.",
                           "transport": "isolated loopback HTTP adapters with server-owned support/admin roles"},
-        "answerChecksSha256": hashlib.sha256((Path(__file__).parent / "live-checks.json").read_bytes()).hexdigest(),
+        "answerChecksSha256": source_hash(Path(__file__).parent / "live-checks.json"),
         "review": "Pattern checks and citation membership are automated. Semantic human review is pending.",
         "usageScope": "Token totals and generation timings cover accepted drafts. HTTP generation requests can also be rejected before inference.",
         "rows": [], "admissionProbes": [],
     }
 
     def save():
-        output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
 
     with ExitStack() as stack:
         endpoints = {}
@@ -115,8 +128,8 @@ def main():
                 row.update({"httpStatus": http_status, "response": response, "endToEndMs": elapsed})
                 if http_status == 200:
                     row["expectedEvidenceCited"] = bool(set(response["citations"]) & set(case["relevantPassageIds"]))
-                    row["answerPatternChecks"] = [{"pattern": pattern, "passed": bool(re.search(pattern, response["answer"], re.IGNORECASE))}
-                                                  for pattern in checks.get(case["id"], [])]
+                    row["answerPatternChecks"] = answer_pattern_checks(response["answer"],
+                        [*checks.get(case["id"], []), *case.get("answerChecks", [])])
                 row["pipelineCheckPassed"] = bool(row["decisionMatchesLabel"] and http_status == 200 and
                                                   row["expectedEvidenceCited"] and row["answerPatternChecks"] and
                                                   all(item["passed"] for item in row["answerPatternChecks"]))
@@ -160,6 +173,9 @@ def main():
         "inputTokens": sum(row["response"]["inputTokens"] or 0 for row in drafts),
         "outputTokens": sum(row["response"]["outputTokens"] or 0 for row in drafts),
         "missingUsageResponses": sum(row["response"]["inputTokens"] is None or row["response"]["outputTokens"] is None for row in drafts),
+        "datasets": {name: {"questions": sum(row["questionSet"] == name for row in report["rows"]),
+                            "passed": sum(row["questionSet"] == name and row["pipelineCheckPassed"] for row in report["rows"])}
+                     for name in ["development", "verification"] if any(row["questionSet"] == name for row in report["rows"])},
     }
     save()
     print(json.dumps(report["summary"], indent=2), flush=True)

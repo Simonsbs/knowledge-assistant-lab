@@ -8,6 +8,8 @@ export interface LabelledQuestion {
   role: Role;
   expectedStatus: Decision;
   relevantPassageIds: string[];
+  expectedAnswer?: string;
+  answerChecks?: string[];
 }
 
 export interface EvaluationRow {

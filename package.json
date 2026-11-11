@@ -4,13 +4,16 @@
   "private": true,
   "type": "module",
   "description": "An independent knowledge assistant and retrieval evaluation lab with optional local Ollama inference.",
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "dev:local": "node scripts/dev-local.mjs",
     "serve": "node scripts/python.mjs server/server.py",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "tsc --noEmit && node --experimental-strip-types scripts/ingest.mjs --check && npm test",
+    "check": "tsc --noEmit && node --experimental-strip-types scripts/ingest.mjs --check && node scripts/review.mjs --check && npm test",
+    "review": "node scripts/review.mjs",
     "test": "node --experimental-strip-types --test tests/engine.test.mjs",
     "test:server": "node scripts/python.mjs -m unittest discover -s tests -p test_*.py -v",
     "ingest": "node --experimental-strip-types scripts/ingest.mjs",
@@ -23,7 +26,8 @@
     "@fontsource-variable/manrope": "5.3.0",
     "lucide-react": "1.72.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "stemmer": "2.0.1"
   },
   "devDependencies": {
     "@types/node": "24.0.0",

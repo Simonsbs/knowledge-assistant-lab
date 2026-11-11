@@ -1,0 +1,30 @@
+name: Validate standalone lab
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.14'
+      - run: npm ci
+      - run: python -m venv .venv
+      - run: node scripts/python.mjs -m pip install -r server/requirements-lock.txt
+      - run: npm run build
+      - run: npm run test:server

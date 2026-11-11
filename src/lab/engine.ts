@@ -1,3 +1,5 @@
+import { stemmer } from "stemmer";
+
 export type Role = "support" | "admin";
 export type Profile = "baseline" | "governed";
 export type Decision = "answered" | "insufficient" | "conflict";
@@ -61,6 +63,8 @@ export const DEFAULT_SETTINGS: Settings = {
 };
 
 const MIN_QUERY_COVERAGE = 0.6;
+// A shared plan name must not make an otherwise undocumented topic answerable.
+const MIN_VOCABULARY_COVERAGE = 0.75;
 
 export function generationPassageIds(answer: Answer): string[] {
   if (answer.status !== "answered" || answer.settings.profile !== "governed") return [];
@@ -70,7 +74,7 @@ export function generationPassageIds(answer: Answer): string[] {
 export const PROFILES = {
   governed: {
     name: "Governed retrieval",
-    description: "Current sources, title weighting, synonyms and labelled conflict checks.",
+    description: "Current sources, English word stems, title weighting, synonyms and labelled conflict checks.",
   },
   baseline: {
     name: "Keyword baseline",
@@ -99,10 +103,18 @@ const synonyms: Record<string, string[]> = {
   duplicate: ["idempotency", "duplicates"],
 };
 
-export function terms(text: string): string[] {
-  return (text.toLowerCase().match(/[a-z0-9]+/g) ?? []).filter(
-    (term) => !stopwords.has(term),
+export function terms(text: string, normalize = false): string[] {
+  const words = (text.toLowerCase().match(/[a-z0-9]+/g) ?? []).filter(
+    (term) => !stopwords.has(term) && (!normalize || !["may", "must"].includes(term)),
   );
+  return normalize ? words.map((word) => stemmer(word)) : words;
+}
+
+// Normalize both sides of each lexical expansion in the same way as the index.
+const normalizedSynonyms: Record<string, string[]> = {};
+for (const [word, expansions] of Object.entries(synonyms)) {
+  const key = stemmer(word);
+  normalizedSynonyms[key] = [...new Set([...(normalizedSynonyms[key] ?? []), ...expansions.map((value) => stemmer(value))])];
 }
 
 function object(value: unknown): value is Record<string, unknown> {
@@ -170,21 +182,27 @@ export function ask(corpus: Corpus, question: string, settings: Settings): Answe
   }
   const start = performance.now();
   const documents = eligibleDocuments(corpus, settings);
+  const normalized = settings.profile === "governed";
+  const tokenize = (text: string) => terms(text, normalized);
   const passages = documents.flatMap(({ passages, ...document }) =>
-    passages.map((passage) => ({ document, passage, words: terms(passage.text) })),
+    passages.map((passage) => ({ document, passage, words: tokenize(passage.text) })),
   );
-  const query = [...new Set(terms(question))];
-  const expansion = settings.profile === "governed"
-    ? [...new Set(query.flatMap((word) => synonyms[word] ?? []))].filter((word) => !query.includes(word))
+  const query = [...new Set(tokenize(question))];
+  const expansion = normalized
+    ? [...new Set(query.flatMap((word) => normalizedSynonyms[word] ?? []))].filter((word) => !query.includes(word))
     : [];
   const search = [...query, ...expansion];
+  const vocabulary = new Set(passages.flatMap(({ document, passage, words }) =>
+    [...words, ...tokenize(`${document.title} ${passage.heading}`)]));
+  const vocabularyCoverage = query.length ? query.filter((word) => vocabulary.has(word) ||
+    (normalized && (normalizedSynonyms[word] ?? []).some((synonym) => vocabulary.has(synonym)))).length / query.length : 0;
   const meanLength = passages.reduce((sum, item) => sum + item.words.length, 0) / (passages.length || 1);
   const frequencies = new Map(search.map((word) => [word,
     passages.filter((item) => item.words.includes(word)).length,
   ]));
   const candidates: Hit[] = passages.map(({ document, passage, words }) => {
     let score = 0;
-    const titleWords = terms(`${document.title} ${passage.heading}`);
+    const titleWords = tokenize(`${document.title} ${passage.heading}`);
     for (const word of search) {
       const frequency = words.filter((item) => item === word).length;
       const count = frequencies.get(word) ?? 0;
@@ -196,14 +214,15 @@ export function ask(corpus: Corpus, question: string, settings: Settings): Answe
     }
     const coverage = query.length ? query.filter((word) => words.includes(word) ||
       (settings.profile === "governed" && (titleWords.includes(word) ||
-        (synonyms[word] ?? []).some((synonym) => words.includes(synonym))))).length / query.length : 0;
+        (normalizedSynonyms[word] ?? []).some((synonym) => words.includes(synonym))))).length / query.length : 0;
     return { document, passage, score, coverage };
   }).filter((hit) => hit.score > 0).sort((a, b) => b.score - a.score || a.passage.id.localeCompare(b.passage.id));
 
   const hits = candidates.slice(0, settings.topK);
   const best = hits[0];
   // Coverage guards are lexical heuristics. They do not establish semantic answerability.
-  const supported = best && best.coverage >= MIN_QUERY_COVERAGE && best.score >= 1;
+  const supported = best && best.coverage >= MIN_QUERY_COVERAGE && best.score >= 1 &&
+    (!normalized || vocabularyCoverage >= MIN_VOCABULARY_COVERAGE);
   const conflicts: Answer["conflicts"] = [];
   if (supported && settings.profile === "governed") {
     // Check the full eligible pool for labelled contradictions associated with a relevant hit.

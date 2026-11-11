@@ -1,0 +1,994 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "agent-semantic-review",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-11-11T11:50:35.006738+00:00",
+  "hashCanonicalization": "UTF-8 with LF line endings",
+  "reportSha256": "9d951b2db942f54c65c2134f14d70567f318ee41ae93b5fff9eef8c59718e270",
+  "corpusSha256": "a291225685becc13d711f482248048188369c42b7232eed9863544ab4c58914d",
+  "humanReview": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "evidence": null
+  },
+  "rubric": [
+    "Correct answer to the actual question",
+    "All requested detail present",
+    "Every factual part supported by cited passages",
+    "Negation, permissions, obligations, conditions and exceptions preserved"
+  ],
+  "rows": [
+    {
+      "id": "Q01",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What is the initial P1 incident response target?",
+      "answer": "The initial P1 incident response target is 15 minutes, available 24 hours a day, seven days a week. [support-handbook/priority-one]",
+      "sources": [
+        {
+          "id": "support-handbook/priority-one",
+          "title": "Alder Cloud support handbook",
+          "text": "For a priority one (P1) incident, the initial response target is 15 minutes, available 24 hours a day, seven days a week. A priority one incident means the production service is unavailable for all users. This is a fictional support target, not a measured service result."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Correct 15-minute P1 target; the 24/7 qualification is retained.",
+      "answerSha256": "cee20d4c95e56d01a0bf0233e0c8f77d79f4643de5e1661cee08ec54f3bc0db3",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q02",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What is the initial P2 incident response target?",
+      "answer": "The initial P2 incident response target is four business hours, which are defined as Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays. [support-handbook/priority-two]",
+      "sources": [
+        {
+          "id": "support-handbook/priority-two",
+          "title": "Alder Cloud support handbook",
+          "text": "For a priority two (P2) incident, the initial response target is four business hours. Business hours are Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Four business hours, weekday hours, timezone and holiday exclusion all agree with the source.",
+      "answerSha256": "8bdf28b6440522688b49d168aadefc43ae7541ac17482c8a2eb6ac6f86d58808",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q03",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What are the support business hours?",
+      "answer": "The support business hours are Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays. [support-handbook/priority-two]",
+      "sources": [
+        {
+          "id": "support-handbook/priority-two",
+          "title": "Alder Cloud support handbook",
+          "text": "For a priority two (P2) incident, the initial response target is four business hours. Business hours are Monday to Friday, 09:00 to 17:00 UTC, excluding the fictional company's published holidays."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The weekday schedule, UTC timezone and holiday exclusion are correctly preserved.",
+      "answerSha256": "5cc8b4cf4a98c4fe52ce269ad4899bee48178dacc6c3623b65091d2aecdf2b9d",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q04",
+      "questionSet": "development",
+      "role": "support",
+      "question": "When must the support lead open an incident bridge?",
+      "answer": "The support lead must open an incident bridge if a priority one incident has no assigned owner after 30 minutes. [support-handbook/incident-escalation]",
+      "sources": [
+        {
+          "id": "support-handbook/incident-escalation",
+          "title": "Alder Cloud support handbook",
+          "text": "If a priority one incident has no assigned owner after 30 minutes, the support lead must open an incident bridge and page the duty incident commander."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Correct trigger: a P1 incident with no assigned owner after 30 minutes. Paging is not asked for and its omission does not change the trigger.",
+      "answerSha256": "1f65609ebb0b211e62a889be844c664464b41b3c1b64c264743582e07504a603",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q05",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How often does the incident commander send a customer status update?",
+      "answer": "The incident commander sends a customer status update every 30 minutes during an active priority one incident. [support-handbook/customer-updates]",
+      "sources": [
+        {
+          "id": "support-handbook/customer-updates",
+          "title": "Alder Cloud support handbook",
+          "text": "During an active priority one incident, the incident commander sends a customer status update every 30 minutes. Updates state the known impact, current investigation and time of the next update."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The 30-minute cadence remains explicitly limited to an active P1 incident.",
+      "answerSha256": "08961302b253ecf5b798c733f9d4eca7175887c1a11baf72feabb14ab2d3d55f",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q06",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Which plan supports SAML single sign-on?",
+      "answer": "Only the Enterprise plan supports SAML 2.0 single sign-on (SSO). [identity-guide/single-sign-on]",
+      "sources": [
+        {
+          "id": "identity-guide/single-sign-on",
+          "title": "Identity and API access guide",
+          "text": "Only the Enterprise plan supports SAML 2.0 single sign-on (SSO). A workspace administrator configures the identity provider from Settings > Identity. The Starter plan does not include SAML single sign-on."
+        }
+      ],
+      "verdict": "pass",
+      "note": "SAML support is restricted to Enterprise; version and SSO wording agree with the source.",
+      "answerSha256": "7f71ce3eca1421387cf1658613cfed31e668ecc7ae117590bb7e542d6cf92f16",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q07",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Who requires multi-factor authentication?",
+      "answer": "Multi-factor authentication is required for all administrators and support staff. A workspace administrator can require MFA for other workspace users. [identity-guide/multi-factor-authentication]",
+      "sources": [
+        {
+          "id": "identity-guide/multi-factor-authentication",
+          "title": "Identity and API access guide",
+          "text": "Multi-factor authentication (MFA) is required for all administrators and support staff. A workspace administrator can require MFA for other workspace users."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Mandatory MFA for administrators and support staff is distinguished from the administrator permission to require it for others.",
+      "answerSha256": "fbf71aeb1b451432f7b19c1a9d27d56db332549aedaf2bf74a450ac435935f79",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q08",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Which plan supports SCIM user provisioning?",
+      "answer": "The Enterprise plan supports SCIM user provisioning. [identity-guide/user-provisioning]",
+      "sources": [
+        {
+          "id": "identity-guide/user-provisioning",
+          "title": "Identity and API access guide",
+          "text": "SCIM user provisioning is available on the Enterprise plan. Provisioning creates and deactivates workspace users through the configured identity provider."
+        }
+      ],
+      "verdict": "pass",
+      "note": "SCIM provisioning is attributed to the Enterprise plan without adding another plan.",
+      "answerSha256": "d803ccff6a2ab3cf037b8abbafaedcf41165da698bb54de80d572c0da9261c74",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q09",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How often must API keys be rotated?",
+      "answer": "API keys must be rotated every 90 days. [identity-guide/api-key-rotation]",
+      "sources": [
+        {
+          "id": "identity-guide/api-key-rotation",
+          "title": "Identity and API access guide",
+          "text": "API keys must be rotated every 90 days. Keep the previous API key active for no more than 24 hours during a planned rotation, then revoke it. Never include actual keys in support tickets."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The API key rotation interval is correctly stated as every 90 days.",
+      "answerSha256": "12a095d7c53ce178c30f4740bb121b09e5b4b33120e801fae62f4c6a02d52a4c",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q10",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How long can the previous API key stay active during rotation?",
+      "answer": "The previous API key must be kept active for no more than 24 hours during a planned rotation. [identity-guide/api-key-rotation]",
+      "sources": [
+        {
+          "id": "identity-guide/api-key-rotation",
+          "title": "Identity and API access guide",
+          "text": "API keys must be rotated every 90 days. Keep the previous API key active for no more than 24 hours during a planned rotation, then revoke it. Never include actual keys in support tickets."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The maximum 24-hour overlap and planned-rotation qualification are preserved; no exact 24-hour minimum is asserted.",
+      "answerSha256": "6d507d1705c36a4f9ab215b98bb29f4861b9e1aabfef2595624883f2eec13c25",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q11",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What is the webhook delivery retry schedule?",
+      "answer": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. After the final failed retry, the event moves to the dead-letter queue. [webhook-guide/delivery-retries]",
+      "sources": [
+        {
+          "id": "webhook-guide/delivery-retries",
+          "title": "Webhook delivery and verification guide",
+          "text": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. After the final failed retry, the event moves to the dead-letter queue. A workspace administrator can inspect and replay a dead-letter event."
+        }
+      ],
+      "verdict": "pass",
+      "note": "All three retry intervals are correct; the additional dead-letter outcome is present in the same cited passage.",
+      "answerSha256": "1e57d72f980b3ab155720c3e927f1993f8ba167d009d998751757261a8e18ecb",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q12",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Which algorithm verifies webhook signatures?",
+      "answer": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. [webhook-guide/signature-verification]",
+      "sources": [
+        {
+          "id": "webhook-guide/signature-verification",
+          "title": "Webhook delivery and verification guide",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        }
+      ],
+      "verdict": "pass",
+      "note": "HMAC-SHA256, the raw request body and workspace signing secret are supported by the cited verification passage.",
+      "answerSha256": "f94a311ffd271b0048acede533b75f17cd5eb43c38f7ea1e0cff20a1d3791a54",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q13",
+      "questionSet": "development",
+      "role": "support",
+      "question": "When should an old webhook timestamp be rejected?",
+      "answer": "An old webhook timestamp should be rejected if it is older than five minutes. [webhook-guide/signature-verification]",
+      "sources": [
+        {
+          "id": "webhook-guide/signature-verification",
+          "title": "Webhook delivery and verification guide",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The rejection boundary is older than five minutes, rather than equal to five minutes.",
+      "answerSha256": "9e76095eb1d871154c3b1248fda7a546de4c174b0cca2ed5757054fb7f90de29",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q14",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How are duplicate webhook events identified?",
+      "answer": "The Idempotency-Key header identifies duplicate webhook events. Store processed idempotency keys for 24 hours and return the previous delivery result for a duplicate. Do not apply a duplicate event a second time. [webhook-guide/duplicate-events]",
+      "sources": [
+        {
+          "id": "webhook-guide/duplicate-events",
+          "title": "Webhook delivery and verification guide",
+          "text": "The Idempotency-Key header identifies duplicate webhook events. Store processed idempotency keys for 24 hours and return the previous delivery result for a duplicate. Do not apply a duplicate event a second time."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The header, 24-hour retention and no-second-application instruction all follow from the duplicate-event passage.",
+      "answerSha256": "95dbb243ae22b42ac84de2fe14f0d2db5877402c56ffba0ce642dda14064817a",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q15",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How long are processed idempotency keys stored?",
+      "answer": "Processed idempotency keys are stored for 24 hours. [webhook-guide/duplicate-events]",
+      "sources": [
+        {
+          "id": "webhook-guide/duplicate-events",
+          "title": "Webhook delivery and verification guide",
+          "text": "The Idempotency-Key header identifies duplicate webhook events. Store processed idempotency keys for 24 hours and return the previous delivery result for a duplicate. Do not apply a duplicate event a second time."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Processed idempotency-key retention is correctly stated as 24 hours.",
+      "answerSha256": "bb5b7c3b380594f6065f96f1b8511880d25dd638aee91fd6738c2f7404f63f92",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q16",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What happens after the final failed webhook retry?",
+      "answer": "After the final failed webhook retry, the event moves to the dead-letter queue. [webhook-guide/delivery-retries]",
+      "sources": [
+        {
+          "id": "webhook-guide/delivery-retries",
+          "title": "Webhook delivery and verification guide",
+          "text": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. After the final failed retry, the event moves to the dead-letter queue. A workspace administrator can inspect and replay a dead-letter event."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The event enters the dead-letter queue only after the final failed retry.",
+      "answerSha256": "be9bcbcd229cffc2809063d252b86049abbb50fdecc253e5801acffce1bdefb6",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q17",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What is the recovery point objective?",
+      "answer": "The recovery point objective (RPO) is four hours. [backup-policy/recovery-objectives]",
+      "sources": [
+        {
+          "id": "backup-policy/recovery-objectives",
+          "title": "Backup and recovery policy",
+          "text": "The recovery point objective (RPO) is four hours. The recovery time objective (RTO) is eight hours. These are fictional planning objectives, not recovery performance measurements or a contractual uptime guarantee."
+        }
+      ],
+      "verdict": "pass",
+      "note": "RPO is correctly distinguished from RTO and stated as four hours.",
+      "answerSha256": "233ecd77667dbd62ad46400aef563f164c955277d9019696506ee22066db4c91",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q18",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What is the recovery time objective?",
+      "answer": "The recovery time objective (RTO) is eight hours. These are fictional planning objectives, not recovery performance measurements or a contractual uptime guarantee. [backup-policy/recovery-objectives]",
+      "sources": [
+        {
+          "id": "backup-policy/recovery-objectives",
+          "title": "Backup and recovery policy",
+          "text": "The recovery point objective (RPO) is four hours. The recovery time objective (RTO) is eight hours. These are fictional planning objectives, not recovery performance measurements or a contractual uptime guarantee."
+        }
+      ],
+      "verdict": "pass",
+      "note": "RTO is eight hours, and the answer preserves the planning-objective and non-guarantee qualifications.",
+      "answerSha256": "dd7dd9cdabe76a41c5160e2ff5ef76b39b668a6deed4cbcd71889e487f53f998",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q19",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Where are primary data and encrypted backups stored?",
+      "answer": "Primary data is stored in Dublin, Ireland, and encrypted backups are stored in Frankfurt, Germany. Both locations are within the European Union. [backup-policy/data-location]",
+      "sources": [
+        {
+          "id": "backup-policy/data-location",
+          "title": "Backup and recovery policy",
+          "text": "The primary data location is Dublin, Ireland. Encrypted backups are stored in Frankfurt, Germany. Both locations are within the European Union."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Primary data and encrypted backups are assigned to the correct cities and countries; the EU statement is sourced.",
+      "answerSha256": "cadecc353679a481b5e9515c5a26a8e182a78687e0ba3e2c3f4a617ca57dfadf",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q20",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What file format and encoding do workspace exports use?",
+      "answer": "Workspace exports use CSV files encoded as UTF-8. [export-guide/export-format]",
+      "sources": [
+        {
+          "id": "export-guide/export-format",
+          "title": "Workspace export guide",
+          "text": "Workspace exports use CSV files encoded as UTF-8. An export includes records that the requesting user is authorised to access in the selected workspace."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Both requested parts, CSV format and UTF-8 encoding, are supplied without unrelated log-retention claims.",
+      "answerSha256": "fc3eaa57ed3aa326c30322ec00fbd6b8c4272de5bcccfede3685fd1e39acb448",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q21",
+      "questionSet": "development",
+      "role": "support",
+      "question": "When does an export download link expire?",
+      "answer": "An export download link expires after 48 hours. Request a new export if the download link has expired. Download links cannot be extended. [export-guide/download-expiry]",
+      "sources": [
+        {
+          "id": "export-guide/download-expiry",
+          "title": "Workspace export guide",
+          "text": "An export download link expires after 48 hours. Request a new export if the download link has expired. Download links cannot be extended."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The 48-hour expiry, need for a new export and prohibition on extension are all supported.",
+      "answerSha256": "b08701e57e6febea991ebdf9250129793557f8d0317a3c4e9d4b1d404fbabefc",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q22",
+      "questionSet": "development",
+      "role": "support",
+      "question": "Who can export the audit history?",
+      "answer": "Only a workspace owner can export the audit history. Support staff cannot export a customer's audit history on the customer's behalf. [export-guide/audit-history]",
+      "sources": [
+        {
+          "id": "export-guide/audit-history",
+          "title": "Workspace export guide",
+          "text": "Only a workspace owner can export the audit history. Open Settings > Audit > Export and choose the required date range. Support staff cannot export a customer's audit history on the customer's behalf."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The workspace-owner restriction and prohibition on support acting for the customer are retained.",
+      "answerSha256": "23a7ea6d6ac7afb4c7744940ee519c8721b2c6ee03f0194317cbe2cb233780da",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q23",
+      "questionSet": "development",
+      "role": "support",
+      "question": "When is active workspace data deleted after an approved deletion request?",
+      "answer": "Active workspace data is deleted within 30 days after an approved deletion request, provided the workspace owner confirms the request before deletion begins. [privacy-policy/workspace-deletion]",
+      "sources": [
+        {
+          "id": "privacy-policy/workspace-deletion",
+          "title": "Workspace deletion and privacy policy",
+          "text": "After a workspace deletion request is approved, active workspace data is deleted within 30 days. The workspace owner must confirm the request before deletion begins."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The 30-day window is conditional on approval and owner confirmation. No uncited backup-retention statement is added.",
+      "answerSha256": "e830d50ef663437a91f052bc13f3efc34faddde76b658f24bd4b337990be08fc",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q24",
+      "questionSet": "development",
+      "role": "support",
+      "question": "How long can deleted workspace data remain in encrypted backups?",
+      "answer": "Deleted workspace data can remain in encrypted backups for up to 90 days before backup expiry removes it. [privacy-policy/backup-deletion]",
+      "sources": [
+        {
+          "id": "privacy-policy/backup-deletion",
+          "title": "Workspace deletion and privacy policy",
+          "text": "Deleted workspace data can remain in encrypted backups for up to 90 days before backup expiry removes it. Backup data is not restored into an active workspace except through an approved recovery process."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The upper limit of 90 days is retained, rather than stated as an exact or minimum retention period.",
+      "answerSha256": "1acb6b467ac11d7eea6242edae9de50ee06dafeb0235273ae3311df63fe7c09c",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q25",
+      "questionSet": "development",
+      "role": "support",
+      "question": "When is scheduled maintenance?",
+      "answer": "Scheduled maintenance occurs on Tuesdays from 02:00 to 03:00 UTC, and customers receive at least seven days of advance notice. Emergency maintenance can occur without the normal notice period, with updates on the status page. [maintenance-guide/advance-notice] [maintenance-guide/maintenance-window]",
+      "sources": [
+        {
+          "id": "maintenance-guide/advance-notice",
+          "title": "Scheduled maintenance guide",
+          "text": "Customers receive at least seven days of advance notice for scheduled maintenance. Emergency maintenance can occur without the normal notice period, with updates on the status page."
+        },
+        {
+          "id": "maintenance-guide/maintenance-window",
+          "title": "Scheduled maintenance guide",
+          "text": "Scheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. The status page lists each approved maintenance window and its expected impact."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Tuesday 02:00-03:00 UTC, normal notice and emergency exception are all supported; both source passages are cited.",
+      "answerSha256": "ea440564db3c6980745805cc0455d7e808625528e1a777aeaf2a9edddd75d855",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q26",
+      "questionSet": "development",
+      "role": "support",
+      "question": "What advance notice is given for scheduled maintenance?",
+      "answer": "Customers receive at least seven days of advance notice for scheduled maintenance. [maintenance-guide/advance-notice]",
+      "sources": [
+        {
+          "id": "maintenance-guide/advance-notice",
+          "title": "Scheduled maintenance guide",
+          "text": "Customers receive at least seven days of advance notice for scheduled maintenance. Emergency maintenance can occur without the normal notice period, with updates on the status page."
+        }
+      ],
+      "verdict": "pass",
+      "note": "At least seven days is correctly stated for scheduled maintenance; this does not claim emergency maintenance has that requirement.",
+      "answerSha256": "1f758c93014d3d71ca10c1a14975ab043068cc52c4432759e95ba28426d5baa8",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q33",
+      "questionSet": "development",
+      "role": "admin",
+      "question": "What is the emergency recovery code?",
+      "answer": "The emergency recovery code is ALDER-DEMO-042. This code is synthetic and grants access to nothing. [admin-runbook/emergency-recovery]",
+      "sources": [
+        {
+          "id": "admin-runbook/emergency-recovery",
+          "title": "Restricted administrator recovery runbook",
+          "text": "Emergency recovery access requires two administrators and a recorded change ticket. The illustrative emergency recovery code is ALDER-DEMO-042. This code is synthetic and grants access to nothing."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The exact illustrative code is correct, exposed only under the admin role, and clearly described as synthetic.",
+      "answerSha256": "7fe5e16a0e561e14dcef0cb727619863c2564c94870902cd975f571a5a1b1515",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "Q34",
+      "questionSet": "development",
+      "role": "admin",
+      "question": "Who is the internal key custodian?",
+      "answer": "The internal key custodian is the Security Operations team. [admin-runbook/internal-key-custody]",
+      "sources": [
+        {
+          "id": "admin-runbook/internal-key-custody",
+          "title": "Restricted administrator recovery runbook",
+          "text": "The internal key custodian is the Security Operations team. Encryption key rotation approval requires the security lead. No real encryption keys are included in this demonstration."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Internal key custody is correctly assigned to Security Operations under the admin role.",
+      "answerSha256": "fb832b2e809f02c5639f9fcf30fa9eabf714a3194a224fd2b2a0695119a7eaa2",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V01",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Which signature algorithm is used to verify a webhook?",
+      "answer": "HMAC-SHA256 is used to verify a webhook signature. [webhook-guide/signature-verification]",
+      "sources": [
+        {
+          "id": "webhook-guide/signature-verification",
+          "title": "Webhook delivery and verification guide",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The requested signature algorithm is correctly identified as HMAC-SHA256.",
+      "answerSha256": "52876e1b404512d7ee03313ba4db619fbea375f3e3202782506eb1ff8052c005",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V02",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "At what age must a webhook timestamp be rejected?",
+      "answer": "A webhook timestamp must be rejected if it is older than five minutes. [webhook-guide/signature-verification]",
+      "sources": [
+        {
+          "id": "webhook-guide/signature-verification",
+          "title": "Webhook delivery and verification guide",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The five-minute timestamp rejection boundary is preserved.",
+      "answerSha256": "49d65390b20e16f3c7b043570b2e60f5a4b839f27e4aa32aa5ed17c41c9abf2a",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V03",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "What header carries the webhook signature?",
+      "answer": "The X-Alder-Signature header carries the webhook signature. [webhook-guide/signature-verification]",
+      "sources": [
+        {
+          "id": "webhook-guide/signature-verification",
+          "title": "Webhook delivery and verification guide",
+          "text": "Verify webhook signatures using HMAC-SHA256 over the raw request body and the workspace signing secret. Compare the result to the X-Alder-Signature header using a constant-time comparison. Reject a webhook timestamp older than five minutes."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The exact X-Alder-Signature header is returned; it is not confused with Idempotency-Key.",
+      "answerSha256": "ad507abb0097c617dfd6c6f1fae301a9b0f6844e514b221a4b9b595e3f992e05",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V04",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "For how many hours are processed idempotency keys retained?",
+      "answer": "Processed idempotency keys are retained for 24 hours. [webhook-guide/duplicate-events]",
+      "sources": [
+        {
+          "id": "webhook-guide/duplicate-events",
+          "title": "Webhook delivery and verification guide",
+          "text": "The Idempotency-Key header identifies duplicate webhook events. Store processed idempotency keys for 24 hours and return the previous delivery result for a duplicate. Do not apply a duplicate event a second time."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The inflected retention question is answered with the documented 24-hour duration.",
+      "answerSha256": "eebfb06c62e07a39964ce0a3a4c1c567767498346b6d29c979df62fe6dba6c08",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V05",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "What must I do after the last failed webhook delivery retry?",
+      "answer": "After the last failed webhook delivery retry, the event moves to the dead-letter queue, and a workspace administrator can inspect and replay a dead-letter event. [webhook-guide/delivery-retries]",
+      "sources": [
+        {
+          "id": "webhook-guide/delivery-retries",
+          "title": "Webhook delivery and verification guide",
+          "text": "Webhook delivery uses exponential backoff: retry after 1 minute, 5 minutes and 30 minutes. After the final failed retry, the event moves to the dead-letter queue. A workspace administrator can inspect and replay a dead-letter event."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Both the immediate dead-letter-queue outcome and the administrator inspection/replay permission are included.",
+      "answerSha256": "4cffc76cd0268a494654edf45c498da5ae3642403ff0dea914e156db3f456d67",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V06",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Where are encrypted backups stored, and where is primary data located?",
+      "answer": "Encrypted backups are stored in Frankfurt, Germany, and primary data is located in Dublin, Ireland. Both locations are within the European Union. [backup-policy/data-location]",
+      "sources": [
+        {
+          "id": "backup-policy/data-location",
+          "title": "Backup and recovery policy",
+          "text": "The primary data location is Dublin, Ireland. Encrypted backups are stored in Frankfurt, Germany. Both locations are within the European Union."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Both requested locations are correct despite the reversed question order; the added EU statement is sourced.",
+      "answerSha256": "28ed6c25b975e716d4f7269ac99cdaff9d87135fa94bee9f9bf48f630ad82330",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V07",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Does the Starter plan include SAML single sign-on?",
+      "answer": "The Starter plan does not include SAML single sign-on. [identity-guide/single-sign-on]",
+      "sources": [
+        {
+          "id": "identity-guide/single-sign-on",
+          "title": "Identity and API access guide",
+          "text": "Only the Enterprise plan supports SAML 2.0 single sign-on (SSO). A workspace administrator configures the identity provider from Settings > Identity. The Starter plan does not include SAML single sign-on."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The negative Starter-plan answer is explicit and agrees with the source restriction.",
+      "answerSha256": "67f0b1542567835c43d98c081efff404c6b3715345bb00e3a9c135bcde535123",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V08",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Who may require MFA for other workspace users?",
+      "answer": "A workspace administrator can require MFA for other workspace users. [identity-guide/multi-factor-authentication]",
+      "sources": [
+        {
+          "id": "identity-guide/multi-factor-authentication",
+          "title": "Identity and API access guide",
+          "text": "Multi-factor authentication (MFA) is required for all administrators and support staff. A workspace administrator can require MFA for other workspace users."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Only a workspace administrator receives the permission to require MFA. The earlier unsupported support-staff permission is absent.",
+      "answerSha256": "2ff8d7aa82e1837a8d18c6ca7d22355657fcb0bcea93e4a9e734b7b1e3518265",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V09",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "How frequently must an API key be rotated?",
+      "answer": "API keys must be rotated every 90 days. [identity-guide/api-key-rotation]",
+      "sources": [
+        {
+          "id": "identity-guide/api-key-rotation",
+          "title": "Identity and API access guide",
+          "text": "API keys must be rotated every 90 days. Keep the previous API key active for no more than 24 hours during a planned rotation, then revoke it. Never include actual keys in support tickets."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The API key rotation interval is correctly stated as 90 days.",
+      "answerSha256": "12a095d7c53ce178c30f4740bb121b09e5b4b33120e801fae62f4c6a02d52a4c",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V10",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Can support staff export a customer's audit history?",
+      "answer": "Support staff cannot export a customer's audit history on the customer's behalf. [export-guide/audit-history]",
+      "sources": [
+        {
+          "id": "export-guide/audit-history",
+          "title": "Workspace export guide",
+          "text": "Only a workspace owner can export the audit history. Open Settings > Audit > Export and choose the required date range. Support staff cannot export a customer's audit history on the customer's behalf."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The prohibition on support exporting customer audit history is preserved.",
+      "answerSha256": "db8800d8971fe7a737d39096dacff08b984c066a4924ff137dff6bb404185bc9",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V11",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "Is backup data restored to an active workspace without an approved recovery process?",
+      "answer": "Backup data is not restored into an active workspace except through an approved recovery process. [privacy-policy/backup-deletion]",
+      "sources": [
+        {
+          "id": "privacy-policy/backup-deletion",
+          "title": "Workspace deletion and privacy policy",
+          "text": "Deleted workspace data can remain in encrypted backups for up to 90 days before backup expiry removes it. Backup data is not restored into an active workspace except through an approved recovery process."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The approved-recovery exception remains attached to the prohibition on restoring backup data.",
+      "answerSha256": "0fe5a4567a1947d2e34d617cdfa519508c1fed19694eb2819cd03f64d82530a1",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V12",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "What confirmation is required before workspace deletion begins?",
+      "answer": "The workspace owner must confirm the request before deletion begins. [privacy-policy/workspace-deletion]",
+      "sources": [
+        {
+          "id": "privacy-policy/workspace-deletion",
+          "title": "Workspace deletion and privacy policy",
+          "text": "After a workspace deletion request is approved, active workspace data is deleted within 30 days. The workspace owner must confirm the request before deletion begins."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Owner confirmation of the request is correctly required before deletion begins.",
+      "answerSha256": "c4fa46663ee174503109bdc4588749c499e02893ebdfcb3c8903d8ec526ddf0b",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V13",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "What is the scheduled Tuesday maintenance window in UTC?",
+      "answer": "Scheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. [maintenance-guide/maintenance-window]",
+      "sources": [
+        {
+          "id": "maintenance-guide/maintenance-window",
+          "title": "Scheduled maintenance guide",
+          "text": "Scheduled maintenance takes place on Tuesdays from 02:00 to 03:00 UTC. The status page lists each approved maintenance window and its expected impact."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Tuesday, both endpoints of the maintenance window and UTC are correct.",
+      "answerSha256": "827c52baf6b3cbaf4887c2b47e0b7f9a4bf7ab3a5ef2fc7732fa62ba80f2d938",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V14",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "May emergency maintenance happen without seven days of notice?",
+      "answer": "Emergency maintenance can happen without seven days of notice, as stated in the maintenance guide, but customers receive updates on the status page. [maintenance-guide/advance-notice]",
+      "sources": [
+        {
+          "id": "maintenance-guide/advance-notice",
+          "title": "Scheduled maintenance guide",
+          "text": "Customers receive at least seven days of advance notice for scheduled maintenance. Emergency maintenance can occur without the normal notice period, with updates on the status page."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Emergency maintenance is correctly exempted from the normal seven-day notice, while status-page updates remain included.",
+      "answerSha256": "34a0fa6cb698942d2f879f9efa9c4810039368ba2985c14d9964fb0a0bfb00b7",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V17",
+      "questionSet": "verification",
+      "role": "admin",
+      "question": "How many administrators and what record are required for emergency recovery access?",
+      "answer": "Emergency recovery access requires two administrators and a recorded change ticket. [admin-runbook/emergency-recovery]",
+      "sources": [
+        {
+          "id": "admin-runbook/emergency-recovery",
+          "title": "Restricted administrator recovery runbook",
+          "text": "Emergency recovery access requires two administrators and a recorded change ticket. The illustrative emergency recovery code is ALDER-DEMO-042. This code is synthetic and grants access to nothing."
+        }
+      ],
+      "verdict": "pass",
+      "note": "Both requested recovery prerequisites, two administrators and a recorded change ticket, are preserved.",
+      "answerSha256": "d7480087f5230275b9b13cc960acc31821d259b3a1d97f155eb8060d3a557344",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V18",
+      "questionSet": "verification",
+      "role": "admin",
+      "question": "Who approves encryption key rotation?",
+      "answer": "The security lead approves encryption key rotation. [admin-runbook/internal-key-custody]",
+      "sources": [
+        {
+          "id": "admin-runbook/internal-key-custody",
+          "title": "Restricted administrator recovery runbook",
+          "text": "The internal key custodian is the Security Operations team. Encryption key rotation approval requires the security lead. No real encryption keys are included in this demonstration."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The security lead approves rotation; this is correctly distinguished from the Security Operations key custodian.",
+      "answerSha256": "0af2dbc77a9473e1efeaeb094ac379a1914e31da1ee9acd59601a3d0dc61c9ed",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V27",
+      "questionSet": "verification",
+      "role": "support",
+      "question": "What is the P1 response target in the current handbook?",
+      "answer": "The P1 response target in the current handbook is 15 minutes, available 24 hours a day, seven days a week. [support-handbook/priority-one]",
+      "sources": [
+        {
+          "id": "support-handbook/priority-one",
+          "title": "Alder Cloud support handbook",
+          "text": "For a priority one (P1) incident, the initial response target is 15 minutes, available 24 hours a day, seven days a week. A priority one incident means the production service is unavailable for all users. This is a fictional support target, not a measured service result."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The current 15-minute P1 target is used, with no archived or draft values.",
+      "answerSha256": "2a2025ac0fece8c799216b0beaf52ba9456001077d63133b8e34da82c5b67348",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    },
+    {
+      "id": "V28",
+      "questionSet": "verification",
+      "role": "admin",
+      "question": "Which team is the internal key custodian?",
+      "answer": "The internal key custodian is the Security Operations team. [admin-runbook/internal-key-custody]",
+      "sources": [
+        {
+          "id": "admin-runbook/internal-key-custody",
+          "title": "Restricted administrator recovery runbook",
+          "text": "The internal key custodian is the Security Operations team. Encryption key rotation approval requires the security lead. No real encryption keys are included in this demonstration."
+        }
+      ],
+      "verdict": "pass",
+      "note": "The key-custodian question is correctly answered by Security Operations rather than the rotation approver.",
+      "answerSha256": "fb832b2e809f02c5639f9fcf30fa9eabf714a3194a224fd2b2a0695119a7eaa2",
+      "correct": true,
+      "complete": true,
+      "supported": true,
+      "qualificationsPreserved": true
+    }
+  ]
+}

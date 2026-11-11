@@ -218,3 +218,9 @@
   .lab-document .lab-source-status { font-size: 8px; padding-inline: 4px; }
 }
 @media (prefers-reduced-motion: reduce) { .lab-spinner { animation: none; } }
+.lab-dataset-picker { display: grid; grid-template-columns: auto minmax(220px, 310px) 1fr; align-items: center; gap: 16px; margin-bottom: 24px; padding: 18px; border: 1px solid var(--line); border-radius: 8px; }
+.lab-dataset-picker label { font-size: 13px; font-weight: 650; }
+.lab-dataset-picker select { padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font: inherit; max-width: 100%; }
+.lab-dataset-picker p { margin: 0; color: var(--muted); font-size: 12px; }
+.lab-eval-summary a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .lab-dataset-picker { grid-template-columns: 1fr; gap: 10px; } }

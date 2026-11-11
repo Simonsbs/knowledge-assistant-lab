@@ -34,10 +34,20 @@ const corpus = { version: 1, id: "alder-cloud-v1", title: "Alder Cloud",
   asOf: "2026-11-11", documents };
 validateCorpus(corpus);
 const questions = JSON.parse(await readFile(path.join(source, "questions.json"), "utf8"));
+const verification = JSON.parse(await readFile(path.join(source, "verification-questions.json"), "utf8"));
 const ids = new Set(documents.flatMap((doc) => doc.passages.map((passage) => passage.id)));
 assert.ok(questions.length >= 30 && questions.length <= 50);
 assert.equal(new Set(questions.map((question) => question.id)).size, questions.length);
-for (const question of questions) assert.ok(question.relevantPassageIds.every((id) => ids.has(id)));
+for (const question of [...questions, ...verification]) {
+  assert.ok(question.relevantPassageIds.every((id) => ids.has(id)));
+  assert.ok(["support", "admin"].includes(question.role));
+  assert.ok(["answered", "conflict", "insufficient"].includes(question.expectedStatus));
+}
+assert.equal(new Set([...questions, ...verification].map((question) => question.id)).size, questions.length + verification.length);
+for (const question of verification) {
+  assert.ok(question.expectedAnswer);
+  assert.ok(question.expectedStatus !== "answered" || question.answerChecks?.length);
+}
 await mkdir(output, { recursive: true });
 async function emit(name, contents) {
   const target = path.join(output, name);
@@ -48,11 +58,18 @@ async function emit(name, contents) {
     await writeFile(target, contents);
   }
 }
-for (const [name, data] of [["corpus.json", corpus], ["questions.json", questions]]) await emit(name, `${JSON.stringify(data, null, 2)}\n`);
+for (const [name, data] of [["corpus.json", corpus], ["questions.json", questions], ["verification-questions.json", verification]]) await emit(name, `${JSON.stringify(data, null, 2)}\n`);
 const frontendData = path.join(root, "src/data");
 await mkdir(frontendData, { recursive: true });
-for (const [name, data] of [["corpus.json", corpus], ["questions.json", questions],
-  ["evaluation.json", JSON.parse(await readFile(path.join(output, "evaluation.json"), "utf8"))]]) {
+const frontendFiles = [["corpus.json", corpus], ["questions.json", questions], ["verification-questions.json", verification]];
+for (const name of ["evaluation.json", "verification-evaluation.json"]) {
+  try { frontendFiles.push([name, JSON.parse(await readFile(path.join(output, name), "utf8"))]); }
+  catch (error) {
+    if (error.code !== "ENOENT" || process.argv.includes("--check")) throw error;
+    console.log(`${name} has not been recorded yet. Run npm run evaluate.`);
+  }
+}
+for (const [name, data] of frontendFiles) {
   const contents = `${JSON.stringify(data, null, 2)}\n`;
   if (process.argv.includes("--check")) {
     assert.equal(await readFile(path.join(frontendData, name), "utf8"), contents, `${name} frontend data is stale. Run npm run ingest.`);
@@ -73,6 +90,7 @@ for (const [input, name] of [["README.md", "build-notes.md"], ["docs/RUNBOOK.md"
     .replace("](docs/DEPLOYMENT.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/DEPLOYMENT.md)")
     .replace("](docs/validation/standalone.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/standalone.md)")
     .replace("](docs/validation/knowledge-lab-live.jpg)", "](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/knowledge-lab-live.jpg)")
+    .replace("](docs/validation/qwen-browser-answer.jpg)", "](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/qwen-browser-answer.jpg)")
     .replace("](docs/decisions/", "](decisions/");
   await emit(name, contents);
 }

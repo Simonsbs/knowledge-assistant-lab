@@ -5,13 +5,16 @@ import type { Corpus } from "./engine";
 import { evaluate } from "./evaluation";
 import type { EvaluationRun, LabelledQuestion } from "./evaluation";
 import { downloadJson } from "./download";
+import type { QuestionSet } from "./KnowledgeLab";
+import validation from "../data/validation-summary.json";
 
 const percent = (value: number | null) => value === null ? "n/a" : `${(value * 100).toFixed(1)}%`;
 
-export default function EvaluationPanel({ corpus, labels, custom, runs, runSource, onRuns, onInspect, onRestore }: {
+export default function EvaluationPanel({ corpus, labels, custom, runs, runSource, onRuns, onInspect, onRestore, questionSet, onQuestionSet }: {
   corpus: Corpus; labels: LabelledQuestion[]; custom: boolean; runs: EvaluationRun[];
   runSource: string; onRuns: (runs: EvaluationRun[]) => void;
   onInspect: (label: LabelledQuestion, run: EvaluationRun) => void; onRestore: () => void;
+  questionSet: QuestionSet; onQuestionSet: (value: QuestionSet) => void;
 }) {
   const [selected, setSelected] = useState("governed-3");
   const [filter, setFilter] = useState("all");
@@ -36,15 +39,21 @@ export default function EvaluationPanel({ corpus, labels, custom, runs, runSourc
   }
 
   if (custom) return <div className="lab-empty"><FlaskConical size={28} /><h2>Evaluation labels belong to the sample pack.</h2>
-    <p>Restore Alder Cloud to compare its 40 labelled questions. Your imported pack has no matching ground truth.</p>
+    <p>Restore Alder Cloud to compare its two labelled question sets. Your imported pack has no matching ground truth.</p>
     <button className="button button-secondary" onClick={onRestore}>Restore sample pack</button></div>;
 
   return (
     <div className="lab-evaluation">
       <div className="lab-section-heading"><div><span className="section-kicker">RETRIEVAL QUALITY / ANSWER DECISIONS</span>
-        <h2>Measure what changed.</h2><p>One labelled question set. Two retrieval profiles. Three passage limits. Every row comes from an actual run.</p></div>
+        <h2>Measure what changed.</h2><p>Two labelled question sets. Two retrieval profiles. Three passage limits. Every row comes from an actual run.</p></div>
         <div className="lab-eval-actions"><button className="button button-primary" onClick={rerun} disabled={busy}><Play size={15} />{busy ? "Evaluating..." : "Rerun in this browser"}</button>
-          <button className="button button-secondary" onClick={() => downloadJson({ corpusId: corpus.id, runSource, runs }, "alder-retrieval-evaluation.json")}><Download size={15} /> Export results</button></div>
+          <button className="button button-secondary" onClick={() => downloadJson({ corpusId: corpus.id, questionSet, runSource, runs }, `alder-${questionSet}-evaluation.json`)}><Download size={15} /> Export results</button></div>
+      </div>
+      <div className="lab-dataset-picker"><label htmlFor="lab-question-set">Question set</label>
+        <select id="lab-question-set" value={questionSet} onChange={(event) => { onQuestionSet(event.target.value as QuestionSet); setFilter("all"); }}>
+          <option value="development">Development set (40)</option><option value="verification">Verification set (28)</option>
+        </select>
+        <p>{questionSet === "development" ? "The original questions were authored alongside the documents." : "Additional questions were frozen before the retrieval fix. Agent-authored, with expected answers and source labels; no independent human labelling is claimed."}</p>
       </div>
       <div className="lab-run-provenance"><span className="lab-mode"><span /> {runSource}</span>
         <p>{run.timestamp.replace("T", " ").slice(0, 19)} UTC · {run.questionCount} questions per configuration · No model calls</p></div>
@@ -62,7 +71,7 @@ export default function EvaluationPanel({ corpus, labels, custom, runs, runSourc
       <div className="lab-eval-summary">
         <div><span>EXACT QUOTE FIDELITY</span><strong>{percent(run.metrics.quoteFidelity)}</strong><p>Quoted text matches the cited passage.</p></div>
         <div><span>NON-CURRENT PASSAGES</span><strong>{run.metrics.nonCurrentPassages}</strong><p>Archived or draft passages retrieved.</p></div>
-        <div><span>SEMANTIC HUMAN REVIEW</span><strong>Pending</strong><p>Relevance and model groundedness remain unscored.</p></div>
+        <div><span>SEMANTIC ANSWER REVIEW</span><strong>{validation.agentPassed}/{validation.agentReviewed} agent-reviewed</strong><p>Human review: {validation.humanReview.status}. <a href="/data/semantic-review.html" target="_blank" rel="noopener noreferrer">Compare every answer with its sources.</a></p></div>
       </div>
       <div className="lab-question-results"><div className="lab-evidence-heading"><h3>Inspect the question set</h3><span>{failures} decisions need review in this run</span></div>
         <div className="lab-result-filter"><label htmlFor="lab-result-filter">Show</label><select id="lab-result-filter" value={filter} onChange={(event) => setFilter(event.target.value)}>
@@ -75,9 +84,9 @@ export default function EvaluationPanel({ corpus, labels, custom, runs, runSourc
           <button className="text-link" aria-label={`Inspect ${row.id}`} onClick={() => onInspect(labels.find((label) => label.id === row.id)!, run)}>Inspect <ArrowUpRight size={15} /></button>
         </article>)}</div>
       </div>
-      <details className="lab-methodology"><summary>Methodology and limits</summary><div><p>The question set was authored with the synthetic documents. It is a development fixture, not a held-out benchmark. Role filtering applies before scoring in both profiles. Governed retrieval also removes draft and superseded sources, weights titles, expands a small synonym list and checks explicitly labelled fact conflicts.</p>
-        <p>The abstention threshold uses lexical query coverage. It can reject relevant evidence or accept a passage that does not answer the question. Exact quotation checks measure copying and citation integrity; they do not measure semantic groundedness. Live model evaluation requires a running local model and a separate human review.</p>
-        <p>The full recorded report includes source hashes and runtime details. <a href="/data/evaluation.json" target="_blank" rel="noopener noreferrer">Open the recorded JSON report.</a></p></div></details>
+      <details className="lab-methodology"><summary>Methodology and limits</summary><div><p>The development questions were authored with the documents; the separate verification set was frozen before the fix and is also agent-authored. Neither is an independent human benchmark. Role filtering applies before scoring in both profiles. Governed retrieval removes draft and superseded sources, normalizes English inflections, weights titles, expands a small synonym list and checks explicitly labelled fact conflicts.</p>
+        <p>The passage coverage threshold remains 60%. A 75% corpus-vocabulary coverage guard limits matches to undocumented topics. These are lexical heuristics and can still reject useful evidence or accept irrelevant text. Exact quotation checks measure copying and citation integrity, not semantic groundedness.</p>
+        <p><a href={questionSet === "development" ? "/data/evaluation.json" : "/data/verification-evaluation.json"} target="_blank" rel="noopener noreferrer">Open this set's retrieval report.</a> <a href="/data/live-validation.md" target="_blank" rel="noopener noreferrer">Read the real local-model validation.</a> <a href="/data/semantic-review.html" target="_blank" rel="noopener noreferrer">Review generated answers against their sources.</a></p></div></details>
     </div>
   );
 }

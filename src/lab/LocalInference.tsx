@@ -33,7 +33,7 @@ export default function LocalInference({ answer, custom }: { answer: Answer; cus
     setBusy(true); setError("");
     try {
       const response = await fetch("/api/knowledge/health", { signal: AbortSignal.any([controller.signal, AbortSignal.timeout(6000)]) });
-      if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) throw new Error("Use npm run dev and start npm run lab:serve, then connect again.");
+      if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) throw new Error("Run npm run dev:local from the Knowledge Lab folder, then connect again.");
       const data = await response.json() as Health;
       if (typeof data.ready !== "boolean" || !["support", "admin"].includes(data.role)) throw new Error("The local service returned an unexpected health response.");
       if (!controller.signal.aborted) setHealth(data);

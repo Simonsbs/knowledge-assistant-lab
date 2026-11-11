@@ -4,6 +4,8 @@ import { Eyebrow, PageMeta } from "../components/UI";
 import corpusData from "../data/corpus.json";
 import questionData from "../data/questions.json";
 import reportData from "../data/evaluation.json";
+import verificationData from "../data/verification-questions.json";
+import verificationReport from "../data/verification-evaluation.json";
 import { ask, DEFAULT_SETTINGS, validateCorpus } from "./engine";
 import type { Corpus, Settings } from "./engine";
 import type { EvaluationRun, LabelledQuestion } from "./evaluation";
@@ -15,6 +17,12 @@ import "./knowledge.css";
 validateCorpus(corpusData);
 const sampleCorpus: Corpus = corpusData;
 const labels = questionData as LabelledQuestion[];
+const verificationLabels = verificationData as LabelledQuestion[];
+const questionSets = {
+  development: { labels, report: reportData },
+  verification: { labels: verificationLabels, report: verificationReport },
+};
+export type QuestionSet = keyof typeof questionSets;
 type Tab = "ask" | "evaluation" | "sources";
 const tabs = [
   { id: "ask", label: "Ask & inspect", icon: MessageSquareText },
@@ -31,10 +39,17 @@ export default function KnowledgeLab() {
   const [submitted, setSubmitted] = useState(labels[0].question);
   const [revision, setRevision] = useState(0);
   const [runs, setRuns] = useState(reportData.runs as EvaluationRun[]);
+  const [questionSet, setQuestionSet] = useState<QuestionSet>("development");
   const [runSource, setRunSource] = useState("Recorded Node runs");
   const answer = useMemo(() => submitted ? ask(corpus, submitted, settings) : null,
     [corpus, submitted, settings, revision]);
   const passageCount = corpus.documents.reduce((sum, doc) => sum + doc.passages.length, 0);
+
+  function changeQuestionSet(value: QuestionSet) {
+    setQuestionSet(value);
+    setRuns(questionSets[value].report.runs as EvaluationRun[]);
+    setRunSource("Recorded Node runs");
+  }
 
   function inspect(label: LabelledQuestion, run: EvaluationRun) {
     setSettings({ profile: run.profile, topK: run.topK, role: label.role });
@@ -73,7 +88,7 @@ export default function KnowledgeLab() {
       <div className="lab-facts" aria-label="Knowledge pack summary">
         <span><strong>{corpus.documents.length}</strong> documents</span>
         <span><strong>{passageCount}</strong> passages</span>
-        <span><strong>{labels.length}</strong> labelled sample questions</span>
+        <span><strong>{labels.length + verificationLabels.length}</strong> labelled questions across two sets</span>
         <span className="lab-pack-label">{custom ? "Your local pack" : "Fictional company"}: {corpus.title}</span>
       </div>
       <nav className="lab-tabs" aria-label="Lab views">
@@ -87,7 +102,8 @@ export default function KnowledgeLab() {
       {tab === "ask" && <QueryWorkbench corpus={corpus} custom={custom} settings={settings}
         setSettings={setSettings} question={question} setQuestion={setQuestion} answer={answer}
         onAsk={(value) => { setQuestion(value); setSubmitted(value.trim()); setRevision((value) => value + 1); }} />}
-      {tab === "evaluation" && <EvaluationPanel corpus={sampleCorpus} labels={labels} custom={custom}
+      {tab === "evaluation" && <EvaluationPanel corpus={sampleCorpus} labels={questionSets[questionSet].labels} custom={custom}
+        questionSet={questionSet} onQuestionSet={changeQuestionSet}
         runs={runs} runSource={runSource} onRuns={(value) => { setRuns(value); setRunSource("Measured in this browser"); }}
         onInspect={inspect} onRestore={() => loadPack(sampleCorpus, false)} />}
       {tab === "sources" && <CorpusPanel corpus={corpus} custom={custom} role={settings.role}

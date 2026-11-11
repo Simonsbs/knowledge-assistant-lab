@@ -1,15 +1,18 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "questionSet": "development",
+  "hashCanonicalization": "UTF-8 with LF line endings",
   "corpusSha256": "a291225685becc13d711f482248048188369c42b7232eed9863544ab4c58914d",
   "questionsSha256": "5fc549ffb542ebbe620f197e21ffb24f1971ba89084288715c9af99b6e8d68ee",
-  "note": "Actual single-pass lexical retrieval runs on this synthetic pack. Exact-quote checks do not prove answer relevance. Human semantic review is pending. This retrieval report calls no model; measured live inference is recorded separately.",
+  "engineSha256": "471a21e676a56975f1d9d475b693b37a6d1efbb5c6fb564d258fc09bdbe5c895",
+  "note": "Actual single-pass lexical retrieval on synthetic data. The separate verification set was frozen before the retrieval fix and is agent-authored, not an independent human benchmark. Exact-quote checks do not prove relevance. Human semantic review is pending. No model is called by this report.",
   "runs": [
     {
       "corpusId": "alder-cloud-v1",
       "profile": "baseline",
       "topK": 1,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.539Z",
+      "timestamp": "2026-11-11T11:47:52.978Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -30,7 +33,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.7988
+          "retrievalMs": 1.9920999999999935
         },
         {
           "id": "Q02",
@@ -49,7 +52,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.769999999999996
+          "retrievalMs": 0.42799999999999727
         },
         {
           "id": "Q03",
@@ -68,7 +71,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17070000000001073
+          "retrievalMs": 0.2331000000000074
         },
         {
           "id": "Q04",
@@ -87,7 +90,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2032999999999987
+          "retrievalMs": 0.2733000000000061
         },
         {
           "id": "Q05",
@@ -106,7 +109,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 10.345699999999994
+          "retrievalMs": 14.133499999999998
         },
         {
           "id": "Q06",
@@ -125,7 +128,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.23449999999999704
+          "retrievalMs": 0.5918000000000063
         },
         {
           "id": "Q07",
@@ -144,7 +147,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17329999999999757
+          "retrievalMs": 0.44829999999998904
         },
         {
           "id": "Q08",
@@ -163,7 +166,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1811000000000007
+          "retrievalMs": 0.4642999999999944
         },
         {
           "id": "Q09",
@@ -182,7 +185,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.3148999999999944
+          "retrievalMs": 0.4650000000000034
         },
         {
           "id": "Q10",
@@ -201,7 +204,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.34439999999999316
+          "retrievalMs": 0.7159000000000049
         },
         {
           "id": "Q11",
@@ -220,7 +223,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1723999999999961
+          "retrievalMs": 0.3199999999999932
         },
         {
           "id": "Q12",
@@ -239,7 +242,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16039999999999566
+          "retrievalMs": 0.3947999999999894
         },
         {
           "id": "Q13",
@@ -258,7 +261,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.268100000000004
+          "retrievalMs": 0.40749999999999886
         },
         {
           "id": "Q14",
@@ -277,7 +280,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15640000000000498
+          "retrievalMs": 0.37120000000000175
         },
         {
           "id": "Q15",
@@ -296,7 +299,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17729999999998824
+          "retrievalMs": 0.4177999999999997
         },
         {
           "id": "Q16",
@@ -315,7 +318,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16800000000000637
+          "retrievalMs": 0.44709999999999184
         },
         {
           "id": "Q17",
@@ -334,7 +337,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.36880000000000734
+          "retrievalMs": 0.42130000000000223
         },
         {
           "id": "Q18",
@@ -353,7 +356,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13689999999999714
+          "retrievalMs": 0.390199999999993
         },
         {
           "id": "Q19",
@@ -372,7 +375,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14829999999999188
+          "retrievalMs": 0.802899999999994
         },
         {
           "id": "Q20",
@@ -391,7 +394,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16079999999999472
+          "retrievalMs": 0.3756999999999948
         },
         {
           "id": "Q21",
@@ -410,7 +413,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14209999999999923
+          "retrievalMs": 0.3259000000000043
         },
         {
           "id": "Q22",
@@ -429,7 +432,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1717000000000013
+          "retrievalMs": 0.39000000000000057
         },
         {
           "id": "Q23",
@@ -448,7 +451,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.19769999999999754
+          "retrievalMs": 0.3947000000000003
         },
         {
           "id": "Q24",
@@ -467,7 +470,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15699999999999648
+          "retrievalMs": 0.37409999999999854
         },
         {
           "id": "Q25",
@@ -486,7 +489,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15160000000000196
+          "retrievalMs": 0.2687999999999988
         },
         {
           "id": "Q26",
@@ -505,7 +508,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15380000000000393
+          "retrievalMs": 0.34499999999999886
         },
         {
           "id": "Q27",
@@ -524,7 +527,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17079999999999984
+          "retrievalMs": 0.3341000000000065
         },
         {
           "id": "Q28",
@@ -543,7 +546,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15930000000000177
+          "retrievalMs": 0.3452000000000055
         },
         {
           "id": "Q29",
@@ -562,7 +565,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.19360000000000355
+          "retrievalMs": 0.6228999999999871
         },
         {
           "id": "Q30",
@@ -581,7 +584,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14560000000000173
+          "retrievalMs": 0.29359999999999786
         },
         {
           "id": "Q31",
@@ -600,7 +603,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14320000000000732
+          "retrievalMs": 0.30450000000000443
         },
         {
           "id": "Q32",
@@ -619,7 +622,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14670000000000982
+          "retrievalMs": 0.328400000000002
         },
         {
           "id": "Q33",
@@ -638,7 +641,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2798999999999978
+          "retrievalMs": 0.3283999999999878
         },
         {
           "id": "Q34",
@@ -657,7 +660,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13510000000000844
+          "retrievalMs": 0.3351000000000113
         },
         {
           "id": "Q35",
@@ -676,7 +679,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14210000000001344
+          "retrievalMs": 0.3341000000000065
         },
         {
           "id": "Q36",
@@ -695,7 +698,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1303000000000054
+          "retrievalMs": 0.31560000000000343
         },
         {
           "id": "Q37",
@@ -712,7 +715,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12460000000000093
+          "retrievalMs": 0.31990000000000407
         },
         {
           "id": "Q38",
@@ -731,7 +734,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.15550000000000352
+          "retrievalMs": 0.4468999999999994
         },
         {
           "id": "Q39",
@@ -750,7 +753,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1465999999999923
+          "retrievalMs": 0.47740000000000293
         },
         {
           "id": "Q40",
@@ -767,7 +770,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1355999999999966
+          "retrievalMs": 0.1967999999999961
         }
       ],
       "metrics": {
@@ -777,8 +780,8 @@
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 2,
-        "p50Ms": 0.16079999999999472,
-        "p95Ms": 0.769999999999996,
+        "p50Ms": 0.3756999999999948,
+        "p95Ms": 0.802899999999994,
         "inputTokens": 0,
         "outputTokens": 0
       }
@@ -788,7 +791,7 @@
       "profile": "baseline",
       "topK": 3,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.547Z",
+      "timestamp": "2026-11-11T11:47:52.990Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -811,7 +814,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.16809999999999548
+          "retrievalMs": 0.26069999999999993
         },
         {
           "id": "Q02",
@@ -832,7 +835,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.14980000000001326
+          "retrievalMs": 0.22650000000000148
         },
         {
           "id": "Q03",
@@ -853,7 +856,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.2289999999999992
+          "retrievalMs": 0.43600000000000705
         },
         {
           "id": "Q04",
@@ -874,7 +877,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.24579999999998847
+          "retrievalMs": 0.37990000000000634
         },
         {
           "id": "Q05",
@@ -895,7 +898,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18730000000000757
+          "retrievalMs": 0.3866999999999905
         },
         {
           "id": "Q06",
@@ -915,7 +918,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1448000000000036
+          "retrievalMs": 0.34950000000000614
         },
         {
           "id": "Q07",
@@ -934,7 +937,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15680000000000405
+          "retrievalMs": 0.35419999999999163
         },
         {
           "id": "Q08",
@@ -955,7 +958,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14039999999999964
+          "retrievalMs": 0.5775000000000006
         },
         {
           "id": "Q09",
@@ -976,7 +979,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2990000000000066
+          "retrievalMs": 0.24969999999999004
         },
         {
           "id": "Q10",
@@ -997,7 +1000,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17079999999999984
+          "retrievalMs": 0.2335999999999956
         },
         {
           "id": "Q11",
@@ -1018,7 +1021,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13400000000000034
+          "retrievalMs": 0.20010000000000616
         },
         {
           "id": "Q12",
@@ -1039,7 +1042,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1320999999999941
+          "retrievalMs": 0.1886000000000081
         },
         {
           "id": "Q13",
@@ -1060,7 +1063,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13230000000000075
+          "retrievalMs": 0.1851999999999947
         },
         {
           "id": "Q14",
@@ -1081,7 +1084,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13180000000001257
+          "retrievalMs": 0.18670000000000186
         },
         {
           "id": "Q15",
@@ -1102,7 +1105,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13290000000000646
+          "retrievalMs": 0.1957000000000022
         },
         {
           "id": "Q16",
@@ -1123,7 +1126,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.24519999999999698
+          "retrievalMs": 0.21599999999999397
         },
         {
           "id": "Q17",
@@ -1143,7 +1146,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14099999999999113
+          "retrievalMs": 0.39329999999999643
         },
         {
           "id": "Q18",
@@ -1164,7 +1167,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15529999999999688
+          "retrievalMs": 0.1968999999999994
         },
         {
           "id": "Q19",
@@ -1185,7 +1188,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18099999999999739
+          "retrievalMs": 0.21129999999999427
         },
         {
           "id": "Q20",
@@ -1206,7 +1209,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1623000000000019
+          "retrievalMs": 0.21829999999999927
         },
         {
           "id": "Q21",
@@ -1227,7 +1230,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14219999999998834
+          "retrievalMs": 0.18999999999999773
         },
         {
           "id": "Q22",
@@ -1248,7 +1251,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13639999999999475
+          "retrievalMs": 0.18000000000000682
         },
         {
           "id": "Q23",
@@ -1269,7 +1272,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.23090000000000543
+          "retrievalMs": 0.2635999999999967
         },
         {
           "id": "Q24",
@@ -1290,7 +1293,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.26539999999999964
+          "retrievalMs": 0.25549999999999784
         },
         {
           "id": "Q25",
@@ -1310,7 +1313,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.34730000000000416
+          "retrievalMs": 0.17099999999999227
         },
         {
           "id": "Q26",
@@ -1330,7 +1333,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14990000000000236
+          "retrievalMs": 0.19669999999999277
         },
         {
           "id": "Q27",
@@ -1350,7 +1353,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13989999999999725
+          "retrievalMs": 0.3815999999999917
         },
         {
           "id": "Q28",
@@ -1371,7 +1374,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15230000000001098
+          "retrievalMs": 0.20660000000000878
         },
         {
           "id": "Q29",
@@ -1392,7 +1395,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1735000000000042
+          "retrievalMs": 0.2296000000000049
         },
         {
           "id": "Q30",
@@ -1413,7 +1416,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13340000000000884
+          "retrievalMs": 0.18000000000000682
         },
         {
           "id": "Q31",
@@ -1433,7 +1436,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15699999999999648
+          "retrievalMs": 0.18300000000000693
         },
         {
           "id": "Q32",
@@ -1454,7 +1457,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1443000000000012
+          "retrievalMs": 0.18849999999999056
         },
         {
           "id": "Q33",
@@ -1475,7 +1478,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1419999999999959
+          "retrievalMs": 0.21710000000000207
         },
         {
           "id": "Q34",
@@ -1496,7 +1499,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13129999999999598
+          "retrievalMs": 0.19319999999999027
         },
         {
           "id": "Q35",
@@ -1516,7 +1519,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14030000000001053
+          "retrievalMs": 0.2078999999999951
         },
         {
           "id": "Q36",
@@ -1535,7 +1538,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13060000000000116
+          "retrievalMs": 0.18550000000000466
         },
         {
           "id": "Q37",
@@ -1552,7 +1555,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12129999999999086
+          "retrievalMs": 0.3533000000000044
         },
         {
           "id": "Q38",
@@ -1573,7 +1576,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.1338999999999828
+          "retrievalMs": 0.19119999999999493
         },
         {
           "id": "Q39",
@@ -1593,7 +1596,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1483000000000061
+          "retrievalMs": 0.19840000000000657
         },
         {
           "id": "Q40",
@@ -1610,7 +1613,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13569999999998572
+          "retrievalMs": 0.18760000000000332
         }
       ],
       "metrics": {
@@ -1620,8 +1623,8 @@
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 8,
-        "p50Ms": 0.1448000000000036,
-        "p95Ms": 0.26539999999999964,
+        "p50Ms": 0.2078999999999951,
+        "p95Ms": 0.39329999999999643,
         "inputTokens": 0,
         "outputTokens": 0
       }
@@ -1631,7 +1634,7 @@
       "profile": "baseline",
       "topK": 5,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.554Z",
+      "timestamp": "2026-11-11T11:47:53.000Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -1656,7 +1659,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.1507000000000005
+          "retrievalMs": 0.2972000000000037
         },
         {
           "id": "Q02",
@@ -1679,7 +1682,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.28889999999998395
+          "retrievalMs": 0.20310000000000628
         },
         {
           "id": "Q03",
@@ -1702,7 +1705,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.12579999999999814
+          "retrievalMs": 0.28469999999998663
         },
         {
           "id": "Q04",
@@ -1725,7 +1728,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 2,
-          "retrievalMs": 0.158299999999997
+          "retrievalMs": 0.26950000000002206
         },
         {
           "id": "Q05",
@@ -1748,7 +1751,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.26370000000000005
+          "retrievalMs": 0.23380000000000223
         },
         {
           "id": "Q06",
@@ -1768,7 +1771,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1594000000000051
+          "retrievalMs": 0.35669999999998936
         },
         {
           "id": "Q07",
@@ -1787,7 +1790,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1436999999999955
+          "retrievalMs": 0.18909999999999627
         },
         {
           "id": "Q08",
@@ -1808,7 +1811,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15109999999998536
+          "retrievalMs": 0.19540000000000646
         },
         {
           "id": "Q09",
@@ -1831,7 +1834,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.15160000000000196
+          "retrievalMs": 0.4300000000000068
         },
         {
           "id": "Q10",
@@ -1854,7 +1857,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.17650000000000432
+          "retrievalMs": 0.2331000000000074
         },
         {
           "id": "Q11",
@@ -1875,7 +1878,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13400000000001455
+          "retrievalMs": 0.18959999999998445
         },
         {
           "id": "Q12",
@@ -1896,7 +1899,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13349999999999795
+          "retrievalMs": 0.19239999999999213
         },
         {
           "id": "Q13",
@@ -1917,7 +1920,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13179999999999836
+          "retrievalMs": 0.18379999999999086
         },
         {
           "id": "Q14",
@@ -1938,7 +1941,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13190000000000168
+          "retrievalMs": 0.19070000000002096
         },
         {
           "id": "Q15",
@@ -1959,7 +1962,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.136099999999999
+          "retrievalMs": 0.18659999999999854
         },
         {
           "id": "Q16",
@@ -1982,7 +1985,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1553000000000111
+          "retrievalMs": 0.35419999999999163
         },
         {
           "id": "Q17",
@@ -2002,7 +2005,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12639999999998963
+          "retrievalMs": 0.1816000000000031
         },
         {
           "id": "Q18",
@@ -2025,7 +2028,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2605000000000075
+          "retrievalMs": 0.17739999999997735
         },
         {
           "id": "Q19",
@@ -2046,7 +2049,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17900000000000205
+          "retrievalMs": 0.22929999999999495
         },
         {
           "id": "Q20",
@@ -2069,7 +2072,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15720000000001733
+          "retrievalMs": 0.2102000000000146
         },
         {
           "id": "Q21",
@@ -2091,7 +2094,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1355999999999824
+          "retrievalMs": 0.19419999999999504
         },
         {
           "id": "Q22",
@@ -2113,7 +2116,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12520000000000664
+          "retrievalMs": 0.2061999999999955
         },
         {
           "id": "Q23",
@@ -2136,7 +2139,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2255999999999858
+          "retrievalMs": 0.24899999999999523
         },
         {
           "id": "Q24",
@@ -2159,7 +2162,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1705000000000041
+          "retrievalMs": 0.22750000000002046
         },
         {
           "id": "Q25",
@@ -2179,7 +2182,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.11170000000001323
+          "retrievalMs": 0.1640999999999906
         },
         {
           "id": "Q26",
@@ -2199,7 +2202,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1414999999999793
+          "retrievalMs": 0.3432999999999993
         },
         {
           "id": "Q27",
@@ -2219,7 +2222,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12069999999999936
+          "retrievalMs": 0.18319999999999936
         },
         {
           "id": "Q28",
@@ -2242,7 +2245,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14009999999998968
+          "retrievalMs": 0.20289999999999964
         },
         {
           "id": "Q29",
@@ -2265,7 +2268,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1822999999999979
+          "retrievalMs": 0.22809999999998354
         },
         {
           "id": "Q30",
@@ -2286,7 +2289,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1220000000000141
+          "retrievalMs": 0.19409999999999172
         },
         {
           "id": "Q31",
@@ -2306,7 +2309,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12040000000001783
+          "retrievalMs": 0.18649999999999523
         },
         {
           "id": "Q32",
@@ -2328,7 +2331,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13409999999998945
+          "retrievalMs": 0.1968999999999994
         },
         {
           "id": "Q33",
@@ -2350,7 +2353,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13280000000000314
+          "retrievalMs": 0.20130000000000337
         },
         {
           "id": "Q34",
@@ -2371,7 +2374,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13100000000000023
+          "retrievalMs": 0.20130000000000337
         },
         {
           "id": "Q35",
@@ -2391,7 +2394,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.29220000000000823
+          "retrievalMs": 0.39639999999999986
         },
         {
           "id": "Q36",
@@ -2410,7 +2413,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1494000000000142
+          "retrievalMs": 0.2202999999999804
         },
         {
           "id": "Q37",
@@ -2427,7 +2430,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12600000000000477
+          "retrievalMs": 0.17350000000001842
         },
         {
           "id": "Q38",
@@ -2450,7 +2453,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 1,
-          "retrievalMs": 0.1377999999999986
+          "retrievalMs": 0.18840000000000146
         },
         {
           "id": "Q39",
@@ -2470,7 +2473,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14699999999999136
+          "retrievalMs": 0.20489999999998076
         },
         {
           "id": "Q40",
@@ -2487,7 +2490,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15289999999998827
+          "retrievalMs": 0.1851000000000056
         }
       ],
       "metrics": {
@@ -2497,8 +2500,8 @@
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 11,
-        "p50Ms": 0.1414999999999793,
-        "p95Ms": 0.26370000000000005,
+        "p50Ms": 0.20130000000000337,
+        "p95Ms": 0.35669999999998936,
         "inputTokens": 0,
         "outputTokens": 0
       }
@@ -2508,7 +2511,7 @@
       "profile": "governed",
       "topK": 1,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.563Z",
+      "timestamp": "2026-11-11T11:47:53.031Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -2529,7 +2532,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.4508999999999901
+          "retrievalMs": 1.61099999999999
         },
         {
           "id": "Q02",
@@ -2548,7 +2551,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.23099999999999454
+          "retrievalMs": 0.8682000000000016
         },
         {
           "id": "Q03",
@@ -2567,7 +2570,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15760000000000218
+          "retrievalMs": 0.8119999999999834
         },
         {
           "id": "Q04",
@@ -2586,7 +2589,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.21290000000001896
+          "retrievalMs": 0.690100000000001
         },
         {
           "id": "Q05",
@@ -2605,7 +2608,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.24979999999999336
+          "retrievalMs": 0.7822000000000173
         },
         {
           "id": "Q06",
@@ -2624,7 +2627,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.22630000000000905
+          "retrievalMs": 0.7417999999999836
         },
         {
           "id": "Q07",
@@ -2643,7 +2646,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1676000000000215
+          "retrievalMs": 1.2197999999999922
         },
         {
           "id": "Q08",
@@ -2662,7 +2665,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1782000000000039
+          "retrievalMs": 0.6739000000000033
         },
         {
           "id": "Q09",
@@ -2681,7 +2684,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1804000000000201
+          "retrievalMs": 1.0357999999999947
         },
         {
           "id": "Q10",
@@ -2700,7 +2703,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.3924000000000092
+          "retrievalMs": 0.6739000000000033
         },
         {
           "id": "Q11",
@@ -2719,7 +2722,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18999999999999773
+          "retrievalMs": 0.6336000000000013
         },
         {
           "id": "Q12",
@@ -2727,18 +2730,18 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/signature-verification"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1425000000000125
+          "retrievalMs": 0.6339000000000112
         },
         {
           "id": "Q13",
@@ -2746,18 +2749,18 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/signature-verification"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14119999999999777
+          "retrievalMs": 0.6226000000000056
         },
         {
           "id": "Q14",
@@ -2776,7 +2779,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1670000000000016
+          "retrievalMs": 0.6537000000000148
         },
         {
           "id": "Q15",
@@ -2795,7 +2798,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14220000000000255
+          "retrievalMs": 0.789100000000019
         },
         {
           "id": "Q16",
@@ -2814,7 +2817,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.20360000000002287
+          "retrievalMs": 0.7134000000000071
         },
         {
           "id": "Q17",
@@ -2833,7 +2836,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1303000000000054
+          "retrievalMs": 0.6336000000000013
         },
         {
           "id": "Q18",
@@ -2852,7 +2855,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12970000000001392
+          "retrievalMs": 0.5623999999999967
         },
         {
           "id": "Q19",
@@ -2871,7 +2874,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15909999999999513
+          "retrievalMs": 0.5863999999999976
         },
         {
           "id": "Q20",
@@ -2890,7 +2893,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1776999999999873
+          "retrievalMs": 0.612400000000008
         },
         {
           "id": "Q21",
@@ -2909,7 +2912,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17490000000000805
+          "retrievalMs": 0.6696000000000026
         },
         {
           "id": "Q22",
@@ -2928,7 +2931,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1307000000000187
+          "retrievalMs": 0.7706000000000017
         },
         {
           "id": "Q23",
@@ -2947,7 +2950,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.20609999999999218
+          "retrievalMs": 0.68780000000001
         },
         {
           "id": "Q24",
@@ -2966,7 +2969,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1710999999999956
+          "retrievalMs": 0.789999999999992
         },
         {
           "id": "Q25",
@@ -2985,7 +2988,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.10880000000000223
+          "retrievalMs": 0.515500000000003
         },
         {
           "id": "Q26",
@@ -3004,7 +3007,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2693999999999903
+          "retrievalMs": 0.5655999999999892
         },
         {
           "id": "Q27",
@@ -3017,13 +3020,13 @@
           "recall": 0.5,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs"
+            "operations-runbook/diagnostic-logs"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.21299999999999386
+          "retrievalMs": 0.6176000000000101
         },
         {
           "id": "Q28",
@@ -3036,13 +3039,13 @@
           "recall": 0.5,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs"
+            "operations-runbook/diagnostic-logs"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.22419999999999618
+          "retrievalMs": 0.820999999999998
         },
         {
           "id": "Q29",
@@ -3061,7 +3064,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.3129000000000133
+          "retrievalMs": 0.7105999999999995
         },
         {
           "id": "Q30",
@@ -3080,7 +3083,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2575999999999965
+          "retrievalMs": 0.5797000000000025
         },
         {
           "id": "Q31",
@@ -3099,7 +3102,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.24089999999998213
+          "retrievalMs": 0.5760999999999967
         },
         {
           "id": "Q32",
@@ -3118,7 +3121,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.3675000000000068
+          "retrievalMs": 0.8117000000000019
         },
         {
           "id": "Q33",
@@ -3137,7 +3140,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.33310000000000173
+          "retrievalMs": 0.764899999999983
         },
         {
           "id": "Q34",
@@ -3156,7 +3159,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.38920000000001664
+          "retrievalMs": 0.5748000000000104
         },
         {
           "id": "Q35",
@@ -3169,13 +3172,13 @@
           "recall": null,
           "reciprocalRank": null,
           "retrievedIds": [
-            "identity-guide/single-sign-on"
+            "identity-guide/user-provisioning"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.26539999999999964
+          "retrievalMs": 1.1216000000000008
         },
         {
           "id": "Q36",
@@ -3194,7 +3197,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15739999999999554
+          "retrievalMs": 0.9182999999999879
         },
         {
           "id": "Q37",
@@ -3211,7 +3214,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1261000000000081
+          "retrievalMs": 0.9339000000000226
         },
         {
           "id": "Q38",
@@ -3230,7 +3233,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18199999999998795
+          "retrievalMs": 0.9896999999999991
         },
         {
           "id": "Q39",
@@ -3249,7 +3252,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16610000000000014
+          "retrievalMs": 0.7920000000000016
         },
         {
           "id": "Q40",
@@ -3266,18 +3269,18 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15319999999999823
+          "retrievalMs": 0.6187999999999931
         }
       ],
       "metrics": {
-        "decisionAccuracy": 0.95,
+        "decisionAccuracy": 1,
         "recallAtK": 0.9193548387096774,
         "mrr": 0.967741935483871,
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 0,
-        "p50Ms": 0.1804000000000201,
-        "p95Ms": 0.38920000000001664,
+        "p50Ms": 0.690100000000001,
+        "p95Ms": 1.1216000000000008,
         "inputTokens": 0,
         "outputTokens": 0
       }
@@ -3287,7 +3290,7 @@
       "profile": "governed",
       "topK": 3,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.571Z",
+      "timestamp": "2026-11-11T11:47:53.071Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -3310,7 +3313,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2079999999999984
+          "retrievalMs": 0.9107999999999947
         },
         {
           "id": "Q02",
@@ -3331,7 +3334,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2436999999999898
+          "retrievalMs": 1.1491000000000042
         },
         {
           "id": "Q03",
@@ -3352,7 +3355,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.29819999999998004
+          "retrievalMs": 0.90979999999999
         },
         {
           "id": "Q04",
@@ -3373,7 +3376,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17650000000000432
+          "retrievalMs": 0.9689999999999941
         },
         {
           "id": "Q05",
@@ -3387,14 +3390,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "support-handbook/customer-updates",
-            "support-handbook/incident-escalation",
-            "export-guide/audit-history"
+            "maintenance-guide/advance-notice",
+            "support-handbook/incident-escalation"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.4008000000000038
+          "retrievalMs": 1.1067000000000178
         },
         {
           "id": "Q06",
@@ -3408,13 +3411,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "identity-guide/single-sign-on",
-            "identity-guide/user-provisioning"
+            "identity-guide/api-key-rotation",
+            "webhook-guide/signature-verification"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18810000000001992
+          "retrievalMs": 1.087299999999999
         },
         {
           "id": "Q07",
@@ -3427,13 +3431,14 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "identity-guide/multi-factor-authentication"
+            "identity-guide/multi-factor-authentication",
+            "export-guide/audit-history"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14359999999999218
+          "retrievalMs": 1.024899999999974
         },
         {
           "id": "Q08",
@@ -3448,13 +3453,13 @@
           "retrievedIds": [
             "identity-guide/user-provisioning",
             "identity-guide/single-sign-on",
-            "export-guide/export-format"
+            "identity-guide/multi-factor-authentication"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16140000000001464
+          "retrievalMs": 1.292900000000003
         },
         {
           "id": "Q09",
@@ -3469,13 +3474,13 @@
           "retrievedIds": [
             "identity-guide/api-key-rotation",
             "webhook-guide/duplicate-events",
-            "privacy-policy/workspace-deletion"
+            "identity-guide/multi-factor-authentication"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15550000000001774
+          "retrievalMs": 1.01430000000002
         },
         {
           "id": "Q10",
@@ -3496,7 +3501,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18880000000001473
+          "retrievalMs": 1.0904000000000167
         },
         {
           "id": "Q11",
@@ -3517,7 +3522,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16970000000000596
+          "retrievalMs": 1.2202000000000055
         },
         {
           "id": "Q12",
@@ -3525,8 +3530,8 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
@@ -3534,11 +3539,11 @@
             "webhook-guide/duplicate-events",
             "webhook-guide/delivery-retries"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13990000000001146
+          "retrievalMs": 1.098399999999998
         },
         {
           "id": "Q13",
@@ -3546,8 +3551,8 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
@@ -3555,11 +3560,11 @@
             "webhook-guide/duplicate-events",
             "webhook-guide/delivery-retries"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13889999999997826
+          "retrievalMs": 1.0367999999999995
         },
         {
           "id": "Q14",
@@ -3573,14 +3578,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/duplicate-events",
-            "webhook-guide/signature-verification",
-            "webhook-guide/delivery-retries"
+            "webhook-guide/delivery-retries",
+            "webhook-guide/signature-verification"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15980000000001837
+          "retrievalMs": 1.4765000000000157
         },
         {
           "id": "Q15",
@@ -3594,14 +3599,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/duplicate-events",
-            "backup-policy/data-location",
-            "identity-guide/api-key-rotation"
+            "identity-guide/api-key-rotation",
+            "backup-policy/data-location"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14500000000001023
+          "retrievalMs": 1.1617999999999995
         },
         {
           "id": "Q16",
@@ -3622,7 +3627,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.19589999999999463
+          "retrievalMs": 1.1476000000000113
         },
         {
           "id": "Q17",
@@ -3643,7 +3648,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12770000000000437
+          "retrievalMs": 1.034400000000005
         },
         {
           "id": "Q18",
@@ -3664,7 +3669,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12849999999997408
+          "retrievalMs": 1.0035000000000025
         },
         {
           "id": "Q19",
@@ -3679,13 +3684,13 @@
           "retrievedIds": [
             "backup-policy/data-location",
             "privacy-policy/backup-deletion",
-            "privacy-policy/workspace-deletion"
+            "webhook-guide/duplicate-events"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2974000000000103
+          "retrievalMs": 1.0900999999999783
         },
         {
           "id": "Q20",
@@ -3699,14 +3704,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "export-guide/export-format",
-            "operations-runbook/diagnostic-logs",
-            "privacy-policy/workspace-deletion"
+            "export-guide/audit-history",
+            "export-guide/download-expiry"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17919999999998026
+          "retrievalMs": 1.131699999999995
         },
         {
           "id": "Q21",
@@ -3727,7 +3732,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.20250000000001478
+          "retrievalMs": 1.811000000000007
         },
         {
           "id": "Q22",
@@ -3741,14 +3746,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "export-guide/audit-history",
-            "export-guide/download-expiry",
-            "export-guide/export-format"
+            "export-guide/export-format",
+            "export-guide/download-expiry"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1414000000000044
+          "retrievalMs": 1.0981999999999914
         },
         {
           "id": "Q23",
@@ -3769,7 +3774,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2026000000000181
+          "retrievalMs": 1.185200000000009
         },
         {
           "id": "Q24",
@@ -3790,7 +3795,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17019999999999413
+          "retrievalMs": 1.1707999999999856
         },
         {
           "id": "Q25",
@@ -3810,7 +3815,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1092000000000155
+          "retrievalMs": 0.9933999999999799
         },
         {
           "id": "Q26",
@@ -3830,7 +3835,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16929999999999268
+          "retrievalMs": 1.1473000000000013
         },
         {
           "id": "Q27",
@@ -3843,14 +3848,14 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs",
-            "operations-runbook/diagnostic-logs"
+            "operations-runbook/diagnostic-logs",
+            "logging-policy/diagnostic-logs"
           ],
           "quoteCount": 2,
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12919999999999732
+          "retrievalMs": 1.0498000000000047
         },
         {
           "id": "Q28",
@@ -3863,15 +3868,15 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs",
             "operations-runbook/diagnostic-logs",
+            "logging-policy/diagnostic-logs",
             "privacy-policy/workspace-deletion"
           ],
           "quoteCount": 2,
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15960000000001173
+          "retrievalMs": 1.4630999999999972
         },
         {
           "id": "Q29",
@@ -3892,7 +3897,7 @@
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18339999999997758
+          "retrievalMs": 1.0244000000000142
         },
         {
           "id": "Q30",
@@ -3913,7 +3918,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12879999999998404
+          "retrievalMs": 0.5620999999999867
         },
         {
           "id": "Q31",
@@ -3933,7 +3938,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1244999999999834
+          "retrievalMs": 0.5233000000000061
         },
         {
           "id": "Q32",
@@ -3954,7 +3959,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15149999999999864
+          "retrievalMs": 0.5491000000000099
         },
         {
           "id": "Q33",
@@ -3975,7 +3980,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1407000000000096
+          "retrievalMs": 0.5940999999999974
         },
         {
           "id": "Q34",
@@ -3996,7 +4001,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13749999999998863
+          "retrievalMs": 0.7456999999999994
         },
         {
           "id": "Q35",
@@ -4009,14 +4014,15 @@
           "recall": null,
           "reciprocalRank": null,
           "retrievedIds": [
+            "identity-guide/user-provisioning",
             "identity-guide/single-sign-on",
-            "identity-guide/user-provisioning"
+            "backup-policy/recovery-objectives"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.27410000000000423
+          "retrievalMs": 0.5550000000000068
         },
         {
           "id": "Q36",
@@ -4035,7 +4041,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1453999999999951
+          "retrievalMs": 0.5423000000000116
         },
         {
           "id": "Q37",
@@ -4052,7 +4058,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14680000000001314
+          "retrievalMs": 0.5389999999999873
         },
         {
           "id": "Q38",
@@ -4073,7 +4079,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1477999999999895
+          "retrievalMs": 0.544700000000006
         },
         {
           "id": "Q39",
@@ -4087,13 +4093,14 @@
           "reciprocalRank": null,
           "retrievedIds": [
             "identity-guide/single-sign-on",
-            "identity-guide/user-provisioning"
+            "identity-guide/api-key-rotation",
+            "export-guide/export-format"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1758000000000095
+          "retrievalMs": 0.5965000000000202
         },
         {
           "id": "Q40",
@@ -4110,18 +4117,18 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15510000000000446
+          "retrievalMs": 0.6283999999999992
         }
       ],
       "metrics": {
-        "decisionAccuracy": 0.95,
+        "decisionAccuracy": 1,
         "recallAtK": 1,
         "mrr": 0.9838709677419355,
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 0,
-        "p50Ms": 0.15960000000001173,
-        "p95Ms": 0.2974000000000103,
+        "p50Ms": 1.034400000000005,
+        "p95Ms": 1.4630999999999972,
         "inputTokens": 0,
         "outputTokens": 0
       }
@@ -4131,7 +4138,7 @@
       "profile": "governed",
       "topK": 5,
       "runtime": "Node v24.12.0 on win32/x64",
-      "timestamp": "2026-11-11T10:22:38.579Z",
+      "timestamp": "2026-11-11T11:47:53.101Z",
       "questionCount": 40,
       "humanReview": "pending",
       "rows": [
@@ -4156,7 +4163,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1962000000000046
+          "retrievalMs": 1.5364000000000146
         },
         {
           "id": "Q02",
@@ -4179,7 +4186,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18410000000000082
+          "retrievalMs": 0.6788999999999987
         },
         {
           "id": "Q03",
@@ -4202,7 +4209,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13399999999998613
+          "retrievalMs": 0.5681999999999903
         },
         {
           "id": "Q04",
@@ -4218,14 +4225,14 @@
             "support-handbook/incident-escalation",
             "support-handbook/priority-one",
             "export-guide/audit-history",
-            "identity-guide/api-key-rotation",
-            "support-handbook/customer-updates"
+            "support-handbook/customer-updates",
+            "logging-policy/diagnostic-logs"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17839999999998213
+          "retrievalMs": 0.5718999999999994
         },
         {
           "id": "Q05",
@@ -4239,16 +4246,16 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "support-handbook/customer-updates",
+            "maintenance-guide/advance-notice",
             "support-handbook/incident-escalation",
             "export-guide/audit-history",
-            "maintenance-guide/advance-notice",
             "maintenance-guide/maintenance-window"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.21219999999999573
+          "retrievalMs": 0.6168999999999869
         },
         {
           "id": "Q06",
@@ -4262,13 +4269,16 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "identity-guide/single-sign-on",
+            "identity-guide/api-key-rotation",
+            "webhook-guide/signature-verification",
+            "support-handbook/incident-escalation",
             "identity-guide/user-provisioning"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1991000000000156
+          "retrievalMs": 0.7254000000000076
         },
         {
           "id": "Q07",
@@ -4281,13 +4291,14 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "identity-guide/multi-factor-authentication"
+            "identity-guide/multi-factor-authentication",
+            "export-guide/audit-history"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14080000000001291
+          "retrievalMs": 0.7008999999999901
         },
         {
           "id": "Q08",
@@ -4302,13 +4313,15 @@
           "retrievedIds": [
             "identity-guide/user-provisioning",
             "identity-guide/single-sign-on",
-            "export-guide/export-format"
+            "identity-guide/multi-factor-authentication",
+            "support-handbook/priority-one",
+            "identity-guide/api-key-rotation"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.15510000000000446
+          "retrievalMs": 0.5745999999999754
         },
         {
           "id": "Q09",
@@ -4323,15 +4336,15 @@
           "retrievedIds": [
             "identity-guide/api-key-rotation",
             "webhook-guide/duplicate-events",
-            "privacy-policy/workspace-deletion",
-            "support-handbook/incident-escalation",
-            "identity-guide/multi-factor-authentication"
+            "identity-guide/multi-factor-authentication",
+            "identity-guide/single-sign-on",
+            "identity-guide/user-provisioning"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.1564999999999941
+          "retrievalMs": 0.5564999999999998
         },
         {
           "id": "Q10",
@@ -4354,7 +4367,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18600000000000705
+          "retrievalMs": 0.5940999999999974
         },
         {
           "id": "Q11",
@@ -4369,13 +4382,15 @@
           "retrievedIds": [
             "webhook-guide/delivery-retries",
             "webhook-guide/duplicate-events",
-            "webhook-guide/signature-verification"
+            "webhook-guide/signature-verification",
+            "maintenance-guide/advance-notice",
+            "maintenance-guide/maintenance-window"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.32219999999998095
+          "retrievalMs": 0.575000000000017
         },
         {
           "id": "Q12",
@@ -4383,8 +4398,8 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
@@ -4392,11 +4407,11 @@
             "webhook-guide/duplicate-events",
             "webhook-guide/delivery-retries"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14769999999998618
+          "retrievalMs": 0.610100000000017
         },
         {
           "id": "Q13",
@@ -4404,8 +4419,8 @@
           "category": "supported",
           "role": "support",
           "expectedStatus": "answered",
-          "actualStatus": "insufficient",
-          "correctDecision": false,
+          "actualStatus": "answered",
+          "correctDecision": true,
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
@@ -4413,11 +4428,11 @@
             "webhook-guide/duplicate-events",
             "webhook-guide/delivery-retries"
           ],
-          "quoteCount": 0,
-          "exactQuoteCount": 0,
+          "quoteCount": 1,
+          "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14449999999999363
+          "retrievalMs": 0.5585999999999842
         },
         {
           "id": "Q14",
@@ -4431,14 +4446,14 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/duplicate-events",
-            "webhook-guide/signature-verification",
-            "webhook-guide/delivery-retries"
+            "webhook-guide/delivery-retries",
+            "webhook-guide/signature-verification"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16590000000002192
+          "retrievalMs": 0.7689000000000021
         },
         {
           "id": "Q15",
@@ -4452,14 +4467,15 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "webhook-guide/duplicate-events",
+            "identity-guide/api-key-rotation",
             "backup-policy/data-location",
-            "identity-guide/api-key-rotation"
+            "privacy-policy/backup-deletion"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.14459999999999695
+          "retrievalMs": 0.6069999999999993
         },
         {
           "id": "Q16",
@@ -4482,7 +4498,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.20459999999999923
+          "retrievalMs": 0.6837999999999909
         },
         {
           "id": "Q17",
@@ -4503,7 +4519,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13219999999998322
+          "retrievalMs": 0.5426999999999964
         },
         {
           "id": "Q18",
@@ -4526,7 +4542,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13249999999999318
+          "retrievalMs": 0.5315999999999974
         },
         {
           "id": "Q19",
@@ -4541,13 +4557,15 @@
           "retrievedIds": [
             "backup-policy/data-location",
             "privacy-policy/backup-deletion",
-            "privacy-policy/workspace-deletion"
+            "webhook-guide/duplicate-events",
+            "privacy-policy/workspace-deletion",
+            "backup-policy/recovery-objectives"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.16139999999998622
+          "retrievalMs": 0.5815000000000055
         },
         {
           "id": "Q20",
@@ -4561,16 +4579,16 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "export-guide/export-format",
-            "operations-runbook/diagnostic-logs",
-            "privacy-policy/workspace-deletion",
-            "privacy-policy/backup-deletion",
-            "export-guide/audit-history"
+            "export-guide/audit-history",
+            "export-guide/download-expiry",
+            "webhook-guide/signature-verification",
+            "webhook-guide/delivery-retries"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.18099999999998317
+          "retrievalMs": 0.8109000000000037
         },
         {
           "id": "Q21",
@@ -4587,13 +4605,13 @@
             "export-guide/audit-history",
             "export-guide/export-format",
             "logging-policy/diagnostic-logs",
-            "privacy-policy/backup-deletion"
+            "operations-runbook/diagnostic-logs"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17719999999999914
+          "retrievalMs": 0.5801999999999907
         },
         {
           "id": "Q22",
@@ -4607,15 +4625,16 @@
           "reciprocalRank": 1,
           "retrievedIds": [
             "export-guide/audit-history",
-            "export-guide/download-expiry",
             "export-guide/export-format",
-            "logging-policy/diagnostic-logs"
+            "export-guide/download-expiry",
+            "logging-policy/diagnostic-logs",
+            "operations-runbook/diagnostic-logs"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13400000000001455
+          "retrievalMs": 0.5694000000000017
         },
         {
           "id": "Q23",
@@ -4631,14 +4650,14 @@
             "privacy-policy/workspace-deletion",
             "privacy-policy/backup-deletion",
             "export-guide/download-expiry",
-            "backup-policy/data-location",
-            "webhook-guide/delivery-retries"
+            "logging-policy/diagnostic-logs",
+            "backup-policy/data-location"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.20590000000001396
+          "retrievalMs": 1.5883000000000038
         },
         {
           "id": "Q24",
@@ -4655,13 +4674,13 @@
             "backup-policy/data-location",
             "privacy-policy/workspace-deletion",
             "export-guide/export-format",
-            "export-guide/audit-history"
+            "backup-policy/recovery-objectives"
           ],
           "quoteCount": 1,
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.17830000000000723
+          "retrievalMs": 1.1625000000000227
         },
         {
           "id": "Q25",
@@ -4681,7 +4700,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.11169999999998481
+          "retrievalMs": 0.9377000000000066
         },
         {
           "id": "Q26",
@@ -4701,7 +4720,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.158299999999997
+          "retrievalMs": 0.9958000000000027
         },
         {
           "id": "Q27",
@@ -4714,14 +4733,14 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs",
-            "operations-runbook/diagnostic-logs"
+            "operations-runbook/diagnostic-logs",
+            "logging-policy/diagnostic-logs"
           ],
           "quoteCount": 2,
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13229999999998654
+          "retrievalMs": 0.7734000000000094
         },
         {
           "id": "Q28",
@@ -4734,8 +4753,8 @@
           "recall": 1,
           "reciprocalRank": 1,
           "retrievedIds": [
-            "logging-policy/diagnostic-logs",
             "operations-runbook/diagnostic-logs",
+            "logging-policy/diagnostic-logs",
             "privacy-policy/workspace-deletion",
             "export-guide/export-format",
             "privacy-policy/backup-deletion"
@@ -4744,7 +4763,7 @@
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2978000000000236
+          "retrievalMs": 0.6359999999999957
         },
         {
           "id": "Q29",
@@ -4767,7 +4786,7 @@
           "exactQuoteCount": 2,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.19110000000000582
+          "retrievalMs": 0.7495000000000118
         },
         {
           "id": "Q30",
@@ -4789,7 +4808,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.13229999999998654
+          "retrievalMs": 0.7923999999999864
         },
         {
           "id": "Q31",
@@ -4809,7 +4828,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.12880000000001246
+          "retrievalMs": 0.6827999999999861
         },
         {
           "id": "Q32",
@@ -4832,7 +4851,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.22220000000001505
+          "retrievalMs": 0.5880999999999972
         },
         {
           "id": "Q33",
@@ -4855,7 +4874,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.24619999999998754
+          "retrievalMs": 0.7807999999999993
         },
         {
           "id": "Q34",
@@ -4876,7 +4895,7 @@
           "exactQuoteCount": 1,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.4064999999999941
+          "retrievalMs": 0.6252000000000066
         },
         {
           "id": "Q35",
@@ -4889,14 +4908,16 @@
           "recall": null,
           "reciprocalRank": null,
           "retrievedIds": [
+            "identity-guide/user-provisioning",
             "identity-guide/single-sign-on",
-            "identity-guide/user-provisioning"
+            "backup-policy/recovery-objectives",
+            "identity-guide/api-key-rotation"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.34729999999998995
+          "retrievalMs": 0.5601000000000056
         },
         {
           "id": "Q36",
@@ -4915,7 +4936,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.2483000000000004
+          "retrievalMs": 0.5244000000000142
         },
         {
           "id": "Q37",
@@ -4932,7 +4953,7 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.22069999999999368
+          "retrievalMs": 0.5640999999999963
         },
         {
           "id": "Q38",
@@ -4949,13 +4970,13 @@
             "support-handbook/priority-one",
             "identity-guide/multi-factor-authentication",
             "logging-policy/diagnostic-logs",
-            "export-guide/audit-history"
+            "identity-guide/single-sign-on"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.26730000000000587
+          "retrievalMs": 0.54849999999999
         },
         {
           "id": "Q39",
@@ -4969,13 +4990,16 @@
           "reciprocalRank": null,
           "retrievedIds": [
             "identity-guide/single-sign-on",
-            "identity-guide/user-provisioning"
+            "identity-guide/api-key-rotation",
+            "export-guide/export-format",
+            "identity-guide/user-provisioning",
+            "backup-policy/recovery-objectives"
           ],
           "quoteCount": 0,
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.27490000000000236
+          "retrievalMs": 0.556999999999988
         },
         {
           "id": "Q40",
@@ -4992,18 +5016,18 @@
           "exactQuoteCount": 0,
           "accessLeaks": 0,
           "nonCurrentPassages": 0,
-          "retrievalMs": 0.22759999999999536
+          "retrievalMs": 0.7069999999999936
         }
       ],
       "metrics": {
-        "decisionAccuracy": 0.95,
+        "decisionAccuracy": 1,
         "recallAtK": 1,
         "mrr": 0.9838709677419355,
         "quoteFidelity": 1,
         "accessLeaks": 0,
         "nonCurrentPassages": 0,
-        "p50Ms": 0.17839999999998213,
-        "p95Ms": 0.32219999999998095,
+        "p50Ms": 0.610100000000017,
+        "p95Ms": 1.1625000000000227,
         "inputTokens": 0,
         "outputTokens": 0
       }

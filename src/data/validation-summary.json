@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:8b",
+  "pipelinePassed": 68,
+  "pipelineCount": 68,
+  "agentReviewed": 46,
+  "agentPassed": 46,
+  "humanReview": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "evidence": null
+  },
+  "reportSha256": "9d951b2db942f54c65c2134f14d70567f318ee41ae93b5fff9eef8c59718e270"
+}

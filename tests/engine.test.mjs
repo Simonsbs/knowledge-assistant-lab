@@ -11,6 +11,9 @@ const questionsText = await readFile(new URL("questions.json", directory), "utf8
 const corpus = JSON.parse(corpusText);
 const labels = JSON.parse(questionsText);
 const report = JSON.parse(await readFile(new URL("evaluation.json", directory), "utf8"));
+const verificationText = await readFile(new URL("verification-questions.json", directory), "utf8");
+const verification = JSON.parse(verificationText);
+const verificationReport = JSON.parse(await readFile(new URL("verification-evaluation.json", directory), "utf8"));
 
 test("support role excludes restricted passages, titles and codes across profiles", () => {
   for (const profile of ["baseline", "governed"]) {
@@ -64,9 +67,12 @@ test("missing information and empty vocabulary produce no evidence response", ()
 test("model context excludes a weak unrelated conflict hit while preserving export evidence", () => {
   const answer = ask(corpus, "What file format and encoding do workspace exports use?", DEFAULT_SETTINGS);
   assert.equal(answer.status, "answered");
-  assert.ok(answer.hits.some((hit) => hit.passage.fact?.key === "diagnostic-retention"),
-    "The regression fixture includes the low-relevance diagnostic passage.");
   assert.deepEqual(generationPassageIds(answer), ["export-guide/export-format"]);
+  // Keep this regression independent of rank improvements that remove the weak hit.
+  const { passages, ...document } = corpus.documents.find((doc) => doc.id === "logging-policy");
+  const withWeakHit = structuredClone(answer);
+  withWeakHit.hits.push({ document, passage: passages[0], score: 0.1, coverage: 0.2 });
+  assert.deepEqual(generationPassageIds(withWeakHit), ["export-guide/export-format"]);
   assert.deepEqual(generationPassageIds(ask(corpus, "How long are diagnostic logs retained?", DEFAULT_SETTINGS)), []);
   assert.deepEqual(generationPassageIds(ask(corpus, "What does the Enterprise plan cost per month?", DEFAULT_SETTINGS)), []);
 });
@@ -123,28 +129,58 @@ test("evaluator detects a forged quote rather than calling it grounded", () => {
     "Changing the returned passage as well cannot fool the canonical-source check.");
 });
 
-test("governed acceptance: all labelled evidence at k=3, no access leaks, at least 90% decision accuracy", () => {
-  const run = evaluate(corpus, labels, "governed", 3, "Node test");
-  assert.equal(run.metrics.recallAtK, 1);
-  assert.equal(run.metrics.accessLeaks, 0);
-  assert.equal(run.metrics.nonCurrentPassages, 0);
-  assert.equal(run.metrics.quoteFidelity, 1);
-  assert.ok(run.metrics.decisionAccuracy >= 0.9);
-  assert.equal(run.humanReview, "pending");
+test("governed acceptance: every development and verification decision, evidence at k=3 and no source leaks", () => {
+  for (const questions of [labels, verification]) {
+    for (const topK of [1, 3, 5]) {
+      const run = evaluate(corpus, questions, "governed", topK, "Node test");
+      assert.equal(run.metrics.decisionAccuracy, 1);
+      if (topK >= 3) assert.equal(run.metrics.recallAtK, 1);
+      assert.equal(run.metrics.accessLeaks, 0);
+      assert.equal(run.metrics.nonCurrentPassages, 0);
+      assert.equal(run.metrics.quoteFidelity, 1);
+      assert.equal(run.humanReview, "pending");
+    }
+  }
 });
 
-test("recorded report matches the current documents, labels and deterministic results", () => {
+test("inflected verbs retrieve the same authorised evidence without rewriting quotations", () => {
+  const pack = structuredClone(corpus);
+  pack.documents = [{ id: "messages", title: "Message verification", owner: "Test", updatedAt: "2026-11-01", status: "current", roles: ["support"],
+    passages: [{ id: "messages/signatures", heading: "Signature verification", text: "Verify messages using Ed25519 signatures. Reject timestamps older than ten minutes." }] }];
+  for (const question of ["Which algorithm verifies message signatures?", "When should message timestamps be rejected?"]) {
+    const answer = ask(pack, question, DEFAULT_SETTINGS);
+    assert.equal(answer.status, "answered");
+    assert.deepEqual(generationPassageIds(answer), ["messages/signatures"]);
+    assert.equal(answer.quotes[0].text, pack.documents[0].passages[0].text);
+  }
+});
+
+test("unknown compound topics do not become supported through a matching plan name", () => {
+  const pack = structuredClone(corpus);
+  pack.documents = [{ id: "plans", title: "Plans", owner: "Test", updatedAt: "2026-11-01", status: "current", roles: ["support"],
+    passages: [{ id: "plans/starter", heading: "Starter plan", text: "The Starter plan includes one workspace." }] }];
+  const answer = ask(pack, "How much storage capacity is included in the Starter plan?", DEFAULT_SETTINGS);
+  assert.equal(answer.status, "insufficient");
+  assert.deepEqual(generationPassageIds(answer), []);
+  assert.deepEqual(answer.quotes, []);
+});
+
+test("recorded report matches the current documents, labels and deterministic results", async () => {
   assert.equal(report.corpusSha256, createHash("sha256").update(corpusText).digest("hex"));
   assert.equal(report.questionsSha256, createHash("sha256").update(questionsText).digest("hex"));
+  assert.equal(verificationReport.questionsSha256, createHash("sha256").update(verificationText).digest("hex"));
   assert.equal(report.runs.length, 6);
   assert.equal(labels.length, 40);
   assert.equal(new Set(labels.map((label) => label.id)).size, labels.length);
-  for (const recorded of report.runs) {
-    const actual = evaluate(corpus, labels, recorded.profile, recorded.topK, "Node verification");
-    const withoutTiming = (rows) => rows.map(({ retrievalMs, ...row }) => row);
-    assert.deepEqual(withoutTiming(recorded.rows), withoutTiming(actual.rows));
-    for (const metric of ["decisionAccuracy", "recallAtK", "mrr", "quoteFidelity", "accessLeaks", "nonCurrentPassages", "inputTokens", "outputTokens"]) {
-      assert.equal(recorded.metrics[metric], actual.metrics[metric]);
+  for (const [recordedReport, questions] of [[report, labels], [verificationReport, verification]]) {
+    assert.equal(recordedReport.engineSha256, createHash("sha256").update((await readFile(new URL("../src/lab/engine.ts", import.meta.url), "utf8")).replace(/\r\n/g, "\n")).digest("hex"));
+    for (const recorded of recordedReport.runs) {
+      const actual = evaluate(corpus, questions, recorded.profile, recorded.topK, "Node verification");
+      const withoutTiming = (rows) => rows.map(({ retrievalMs, ...row }) => row);
+      assert.deepEqual(withoutTiming(recorded.rows), withoutTiming(actual.rows));
+      for (const metric of ["decisionAccuracy", "recallAtK", "mrr", "quoteFidelity", "accessLeaks", "nonCurrentPassages", "inputTokens", "outputTokens"]) {
+        assert.equal(recorded.metrics[metric], actual.metrics[metric]);
+      }
     }
   }
 });
