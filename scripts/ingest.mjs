@@ -77,21 +77,28 @@ for (const [name, data] of frontendFiles) {
     await writeFile(path.join(frontendData, name), contents);
   }
 }
-for (const [input, name] of [["README.md", "build-notes.md"], ["docs/RUNBOOK.md", "RUNBOOK.md"],
+const documentation = [["README.md", "build-notes.md"], ["docs/RUNBOOK.md", "RUNBOOK.md"],
   ["docs/decisions/001-static-evidence-and-local-inference.md", "decisions/001-static-evidence-and-local-inference.md"],
   ["docs/ROADMAP.md", "roadmap.md"], ["docs/validation/knowledge-lab-live.md", "live-validation.md"],
-  ["docs/validation/knowledge-lab-live-evaluation.json", "live-evaluation.json"]]) {
-  const contents = (await readFile(path.join(root, input), "utf8"))
-    .replaceAll("docs/validation/knowledge-lab-live.md", "live-validation.md")
-    .replaceAll("docs/validation/knowledge-lab-live-evaluation.json", "live-evaluation.json")
-    .replace("](knowledge-lab-live-evaluation.json)", "](live-evaluation.json)")
-    .replace("](docs/RUNBOOK.md)", "](RUNBOOK.md)")
-    .replace("](docs/ROADMAP.md)", "](roadmap.md)")
-    .replace("](docs/DEPLOYMENT.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/DEPLOYMENT.md)")
-    .replace("](docs/validation/standalone.md)", "](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/standalone.md)")
-    .replace("](docs/validation/knowledge-lab-live.jpg)", "](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/knowledge-lab-live.jpg)")
-    .replace("](docs/validation/qwen-browser-answer.jpg)", "](https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/docs/validation/qwen-browser-answer.jpg)")
-    .replace("](docs/decisions/", "](decisions/");
+  ["docs/validation/knowledge-lab-live-evaluation.json", "live-evaluation.json"],
+  ["docs/validation/semantic-review.md", "semantic-review.md"]];
+const publishedPaths = new Map(documentation);
+for (const [input, name] of documentation) {
+  let contents = await readFile(path.join(root, input), "utf8");
+  if (input.endsWith(".md")) contents = contents.replace(/(!?\[[^\]]*\]\()([^\s)]+)(\))/g, (match, before, href, after) => {
+    if (/^[a-z][a-z0-9+.-]*:|^[/#]/i.test(href)) return match;
+    const [target, fragment] = href.split("#");
+    const sourceTarget = path.posix.normalize(path.posix.join(path.posix.dirname(input), target));
+    let url;
+    if (publishedPaths.has(sourceTarget)) {
+      url = path.posix.relative(path.posix.dirname(name), publishedPaths.get(sourceTarget));
+    } else if (before.startsWith("!")) {
+      url = `https://raw.githubusercontent.com/Simonsbs/knowledge-assistant-lab/main/${sourceTarget}`;
+    } else {
+      url = `https://github.com/Simonsbs/knowledge-assistant-lab/${target.endsWith("/") ? "tree" : "blob"}/main/${sourceTarget}`;
+    }
+    return `${before}${url}${fragment ? `#${fragment}` : ""}${after}`;
+  });
   await emit(name, contents);
 }
-console.log(`${process.argv.includes("--check") ? "Verified" : "Ingested"} ${documents.length} synthetic documents, ${ids.size} passages and ${questions.length} labelled questions.`);
+console.log(`${process.argv.includes("--check") ? "Verified" : "Ingested"} ${documents.length} synthetic documents, ${ids.size} passages, ${questions.length} development and ${verification.length} verification questions.`);

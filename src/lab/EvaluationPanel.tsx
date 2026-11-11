@@ -71,7 +71,7 @@ export default function EvaluationPanel({ corpus, labels, custom, runs, runSourc
       <div className="lab-eval-summary">
         <div><span>EXACT QUOTE FIDELITY</span><strong>{percent(run.metrics.quoteFidelity)}</strong><p>Quoted text matches the cited passage.</p></div>
         <div><span>NON-CURRENT PASSAGES</span><strong>{run.metrics.nonCurrentPassages}</strong><p>Archived or draft passages retrieved.</p></div>
-        <div><span>SEMANTIC ANSWER REVIEW</span><strong>{validation.agentPassed}/{validation.agentReviewed} agent-reviewed</strong><p>Human review: {validation.humanReview.status}. <a href="/data/semantic-review.html" target="_blank" rel="noopener noreferrer">Compare every answer with its sources.</a></p></div>
+        <div><span>SEMANTIC ANSWER REVIEW</span><strong>{validation.agentPassed}/{validation.agentReviewed} agent-reviewed</strong><p>{validation.humanReview.status === "not_performed" ? "Version 1 accepted on agent validation. No human review claimed." : `Human review: ${validation.humanReview.status}.`} <a href="/data/semantic-review.html" target="_blank" rel="noopener noreferrer">Compare every answer with its sources.</a></p></div>
       </div>
       <div className="lab-question-results"><div className="lab-evidence-heading"><h3>Inspect the question set</h3><span>{failures} decisions need review in this run</span></div>
         <div className="lab-result-filter"><label htmlFor="lab-result-filter">Show</label><select id="lab-result-filter" value={filter} onChange={(event) => setFilter(event.target.value)}>

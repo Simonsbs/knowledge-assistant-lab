@@ -13,7 +13,7 @@ Validated on 11 November 2026 in the independent Knowledge Lab. The public appli
 | Accepted cited answers and targeted content checks | 46 / 46 |
 | Invalid-context probes rejected | 7 / 7 |
 | Source-by-source agent review | 46 / 46 |
-| Human review | Pending. No human sign-off is claimed. |
+| Human review | Not performed. Version 1 was accepted on agent validation. |
 | Median accepted generation time | 640 ms |
 | 95th percentile accepted generation time | 1032 ms |
 | Model-reported input tokens | 18,235 |

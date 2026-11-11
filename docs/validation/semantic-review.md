@@ -1,6 +1,6 @@
 # Semantic answer review
 
-Source-by-source agent review: 46/46 accepted answers passed. Human review: Pending. No human sign-off is claimed.
+Source-by-source agent review: 46/46 accepted answers passed. Human review: Not performed. Version 1 was accepted on agent validation.
 
 Reviewer: Codex (AI coding agent). Reviewed 2026-11-11T11:50:35.006738+00:00. This is a finite qualitative review, not independent human evaluation or proof of general model quality.
 

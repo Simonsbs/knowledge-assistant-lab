@@ -1,0 +1,72 @@
+{
+  "recordedAt": "2026-11-11T12:08:47.716Z",
+  "publicUrl": "https://knowledge.bestdev.co.il/",
+  "sourceCommit": "988258e808539c60d70207ba712f26278a30aa12",
+  "deploymentVersion": 3,
+  "checks": [
+    {
+      "question": "Which algorithm verifies webhook signatures?",
+      "expected": "Evidence found",
+      "actual": "Evidence found",
+      "passed": true
+    },
+    {
+      "question": "When should an old webhook timestamp be rejected?",
+      "expected": "Evidence found",
+      "actual": "Evidence found",
+      "passed": true
+    },
+    {
+      "question": "How much storage capacity is included in the Starter plan?",
+      "expected": "Insufficient evidence",
+      "actual": "Insufficient evidence",
+      "passed": true
+    },
+    {
+      "question": "How long are diagnostic logs retained?",
+      "expected": "Sources disagree",
+      "actual": "Sources disagree",
+      "passed": true
+    },
+    {
+      "check": "role filtering",
+      "supportHasRestrictedCode": false,
+      "adminHasSyntheticCode": true,
+      "passed": true
+    }
+  ],
+  "developmentMetrics": [
+    "Keyword baselineTop 1 passages85.0%88.7%0.9350.50 ms0",
+    "Keyword baselineTop 3 passages85.0%100.0%0.9680.30 ms0",
+    "Keyword baselineTop 5 passages85.0%100.0%0.9680.40 ms0",
+    "Governed retrievalTop 1 passages100.0%91.9%0.9681.20 ms0",
+    "Governed retrievalTop 3 passages100.0%100.0%0.9840.90 ms0",
+    "Governed retrievalTop 5 passages100.0%100.0%0.9841.00 ms0"
+  ],
+  "verificationMetrics": [
+    "Keyword baselineTop 1 passages89.3%90.0%0.9500.30 ms0",
+    "Keyword baselineTop 3 passages89.3%100.0%0.9670.30 ms0",
+    "Keyword baselineTop 5 passages89.3%100.0%0.9670.30 ms0",
+    "Governed retrievalTop 1 passages100.0%95.0%1.0000.80 ms0",
+    "Governed retrievalTop 3 passages100.0%100.0%1.0001.10 ms0",
+    "Governed retrievalTop 5 passages100.0%100.0%1.0000.80 ms0"
+  ],
+  "mobile": {
+    "viewport": 390,
+    "documentWidth": 375,
+    "noHorizontalPageOverflow": true
+  },
+  "export": {
+    "questionSet": "verification",
+    "runs": 6,
+    "questionCount": 28
+  },
+  "localModel": {
+    "model": "qwen3:8b",
+    "actualPermissionDraft": "A workspace administrator can require MFA for other workspace users. [identity-guide/multi-factor-authentication]",
+    "draftCleared": true,
+    "conflictGenerationBlocked": true,
+    "missingGenerationBlocked": true,
+    "roleMismatchBlocked": true
+  }
+}

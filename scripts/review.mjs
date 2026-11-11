@@ -25,10 +25,17 @@ assert.ok(report.rows.every((row) => row.pipelineCheckPassed) && report.admissio
 assert.equal(review.reviewType, "agent-semantic-review");
 assert.equal(review.reviewer, "Codex");
 assert.ok(review.reviewedAt);
-assert.ok(["pending", "complete"].includes(review.humanReview.status));
+assert.ok(["pending", "complete", "not_performed"].includes(review.humanReview.status));
 if (review.humanReview.status === "complete") {
   assert.ok(review.humanReview.reviewer && review.humanReview.reviewedAt && review.humanReview.evidence,
     "Human review requires an actual reviewer, timestamp and confirmation evidence.");
+}
+if (review.releaseAcceptance?.status === "accepted") {
+  assert.equal(review.releaseAcceptance.reportSha256, review.reportSha256);
+  assert.ok(review.releaseAcceptance.acceptedBy && review.releaseAcceptance.acceptedAt && review.releaseAcceptance.evidence);
+}
+if (review.humanReview.status === "not_performed") {
+  assert.equal(review.releaseAcceptance?.status, "accepted", "Omitting human review requires explicit release acceptance.");
 }
 const drafts = report.rows.filter((row) => row.httpStatus === 200);
 assert.equal(review.rows.length, drafts.length);
@@ -57,11 +64,12 @@ const rows = drafts.map((row) => {
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 const passed = rows.filter((row) => row.verdict === "pass").length;
-const human = review.humanReview.status === "complete" ? `Complete: ${review.humanReview.reviewer}` : "Pending. No human sign-off is claimed.";
+const human = review.humanReview.status === "complete" ? `Complete: ${review.humanReview.reviewer}`
+  : review.humanReview.status === "not_performed" ? "Not performed. Version 1 was accepted on agent validation." : "Pending. No human sign-off is claimed.";
 const intro = `Source-by-source agent review: ${passed}/${rows.length} accepted answers passed. Human review: ${human}`;
 const summary = { model: report.model, pipelinePassed: report.summary.pipelineChecksPassed,
   pipelineCount: report.summary.questionCount, agentReviewed: rows.length, agentPassed: passed,
-  humanReview: review.humanReview, reportSha256: review.reportSha256 };
+  humanReview: review.humanReview, releaseAcceptance: review.releaseAcceptance, reportSha256: review.reportSha256 };
 const md = `# Semantic answer review\n\n${intro}\n\nReviewer: Codex (AI coding agent). Reviewed ${review.reviewedAt}. This is a finite qualitative review, not independent human evaluation or proof of general model quality.\n\nRubric: answer the requested question, support each factual part with the cited text, preserve negation, permissions, obligations and exceptions, and add no unsupported facts.\n\nLive report SHA-256: ${review.reportSha256}\n\nCorpus SHA-256: ${review.corpusSha256}\n\n` + rows.map((row) =>
   `## ${row.id}: ${row.question}\n\nRole: ${row.role}. Set: ${row.questionSet}. Verdict: ${row.verdict}.\n\n**Actual answer:** ${row.answer}\n\n${row.sources.map((source) => `**${source.id}:** ${source.text}`).join("\n\n")}\n\n**Review:** ${row.note}\n`).join("\n");
 const liveNotes = `# Live Ollama validation

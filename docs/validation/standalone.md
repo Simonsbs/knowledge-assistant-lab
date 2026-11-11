@@ -8,10 +8,14 @@ The browser opens the application directly at `http://127.0.0.1:5173/`, with Kno
 
 The original [live screenshot](knowledge-lab-live.jpg) records the earlier 3B model. Reports and screenshots from that stage remain historical evidence. Current validation fixes the two inflection failures and the storage-topic regression, and uses Qwen3 8B after semantic inspection found a persistent permission error in the smaller model.
 
+The [current Qwen browser answer](qwen-browser-answer.jpg) shows the corrected MFA permission. The [browser completion record](browser-completion.json) confirms that submitting a new question clears the previous model draft and that conflicts, missing evidence and a mismatched service role disable generation. Published evaluation exports contain all six runs for the selected question set.
+
 ## Public deployment and extraction
 
 The independent application opened at [knowledge.bestdev.co.il](https://knowledge.bestdev.co.il/) over HTTPS without sign-in. The custom domain and TLS certificate are active. Updated browser evaluation reran all six configurations for each set: 40 development and 28 verification questions, with no governed decision failures. Browser checks confirmed that Q12 and Q13 find evidence, the unsupported storage question abstains and diagnostic-log contradictions remain conflicts.
 
 The public layout was checked at its normal desktop viewport and at 390 by 844 pixels. At the mobile size, the document width stayed within the viewport and the application navigation remained available. Screenshots record the [desktop](standalone-public-desktop.jpg) and [mobile](standalone-public-mobile.jpg) views.
+
+The updated two-set evaluation was also checked after deployment: [desktop evaluation](published-evaluation-v3.jpg), [390-pixel mobile evaluation](published-evaluation-mobile-v3.jpg) and [answer review](published-review-v3.jpg). Fresh Windows and Linux CI builds passed. Simon then explicitly accepted version 1 on the completed agent validation; human review was not performed or claimed.
 
 The portfolio's embedded implementation, data and service scripts were moved to an external migration archive. Its cards link to this application, and its previous lab route displays an outbound compatibility link. The portfolio builds independently and uses port 5174 for development, while this project uses 5173. Simon subsequently confirmed that the portfolio was already published; this task updates only the independent lab deployment.

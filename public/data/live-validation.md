@@ -13,7 +13,7 @@ Validated on 11 November 2026 in the independent Knowledge Lab. The public appli
 | Accepted cited answers and targeted content checks | 46 / 46 |
 | Invalid-context probes rejected | 7 / 7 |
 | Source-by-source agent review | 46 / 46 |
-| Human review | Pending. No human sign-off is claimed. |
+| Human review | Not performed. Version 1 was accepted on agent validation. |
 | Median accepted generation time | 640 ms |
 | 95th percentile accepted generation time | 1032 ms |
 | Model-reported input tokens | 18,235 |
@@ -34,7 +34,7 @@ The original 40 questions now pass. An additional 28-question fixture was frozen
 
 The smaller model repeated the permission error after a prompt change, so it is no longer the acceptance model. Qwen3 8B with explicit guidance about permissions, obligations, conditions and source coverage passed the six-case diagnostic and two complete 68-case runs. The recorded semantic review confirms that the final permission answer names only a workspace administrator and that backup-restoration exceptions remain attached to their claims.
 
-Historical results are retained in [before-inflection-fix](before-inflection-fix/), [the first verification live run](verification-first-live-run.json), [the permission regression](verification-permission-regression.json), [Qwen smoke checks](qwen-smoke.json) and [the first complete Qwen success](qwen-initial-success.json). Failed runs are not relabelled as passing.
+Historical results are retained in [before-inflection-fix](https://github.com/Simonsbs/knowledge-assistant-lab/tree/main/docs/validation/before-inflection-fix/), [the first verification live run](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/verification-first-live-run.json), [the permission regression](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/verification-permission-regression.json), [Qwen smoke checks](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/qwen-smoke.json) and [the first complete Qwen success](https://github.com/Simonsbs/knowledge-assistant-lab/blob/main/docs/validation/qwen-initial-success.json). Failed runs are not relabelled as passing.
 
 ## Scope and reproduction
 

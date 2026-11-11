@@ -11,7 +11,7 @@ Version 1 implementation and agent validation:
 - Qwen3 8B replaces the smaller acceptance model after repeated permission errors. The full live run passes 68/68 cases, 46/46 generated-answer checks and 7/7 context-admission probes.
 - All 46 generated answers have a recorded source-by-source agent review, bound to the exact report and answer hashes. The public comparison exposes the actual answer and cited source text.
 - Build checks, 14 Node tests, 19 Python tests and Windows/Linux CI cover the standalone application. Browser checks cover both datasets, the original failure cases and responsive layouts.
-- Human review is a separate remaining sign-off. It must be supplied by an actual reviewer of the answer comparison and verification labels; agent review is not relabelled as human review.
+- Simon explicitly accepted version 1 on agent validation on 11 November 2026. Human review was not performed, is not claimed and is not a remaining release requirement for this version.
 
 Future research, outside version 1: obtain an externally authored, held-out benchmark before making broader quality claims; compare embeddings on that larger dataset if useful. Public static hosting remains separate from local inference.
 

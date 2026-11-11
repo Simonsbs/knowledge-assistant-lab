@@ -5,10 +5,20 @@
   "agentReviewed": 46,
   "agentPassed": 46,
   "humanReview": {
-    "status": "pending",
+    "status": "not_performed",
+    "requiredForVersion1": false,
     "reviewer": null,
     "reviewedAt": null,
     "evidence": null
+  },
+  "releaseAcceptance": {
+    "status": "accepted",
+    "version": "1",
+    "basis": "agent-validation",
+    "acceptedBy": "Simon (project owner)",
+    "acceptedAt": "2026-11-11T12:07:12.551419+00:00",
+    "reportSha256": "9d951b2db942f54c65c2134f14d70567f318ee41ae93b5fff9eef8c59718e270",
+    "evidence": "User selected: Accept agent validation for version 1. Chat confirmation on 11 November 2026."
   },
   "reportSha256": "9d951b2db942f54c65c2134f14d70567f318ee41ae93b5fff9eef8c59718e270"
 }
