@@ -19,7 +19,7 @@
     "ingest": "node --experimental-strip-types scripts/ingest.mjs",
     "evaluate": "node --experimental-strip-types scripts/evaluate.mjs",
     "evaluate:live": "node scripts/python.mjs server/evaluate_live.py",
-    "build": "npm run check && vite build"
+    "build": "npm run check && vite build && node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "5.3.0",
